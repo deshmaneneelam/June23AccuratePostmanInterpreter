@@ -1051,7 +1051,8 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"url": "{{baseurl}}/users/users/{{userDeleteId}}"
+						"url": "{{baseurl}}/users/users/{{userDeleteId}}",
+						"description": "StartFragment\n\n Delete user details with a invalid user Id.\n\n status code for Invalid Id : 404 Not Found\n\n  \n\nEndFragment"
 					},
 					"response": []
 				}
@@ -1062,7 +1063,7 @@
 	],
 	"variable": [
 		{
-			"id": "15e7019e-b520-4f46-82b1-95fd528fa54d",
+			"id": "ca970864-fefe-4449-aa5d-7c01c11de981",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
