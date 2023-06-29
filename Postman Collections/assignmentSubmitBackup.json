@@ -206,14 +206,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \t\t\r\n\"assignmentId\": 1661,\r\n\"userId\": \"U3606\",\r\n\"subDesc\": \"Resubmit assign\",\r\n\"subComments\": \"resubmit assign comment\",\r\n\"subPathAttach1\": \"striabc.pdf\",\r\n\"subDateTime\": \"06-28-2023 20:10:21\",\r\n\"gradedBy\": null,\r\n\"gradedDateTime\": null,\r\n\"grade\": -1\r\n}",
+							"raw": "\t{\r\n    \"assignmentId\": 1707,\r\n    \"userId\": \"U3606\",\r\n    \"subDesc\": \"description\",\r\n    \"subComments\": \"comments\",\r\n    \"subPathAttach1\": \"filepath.doc\",\r\n    \"subDateTime\": \"06-29-2023 04:31:03\",\r\n    \"gradedBy\": \"U22\",\r\n    \"gradedDateTime\": \"07-01-2023 04:31:03\",\r\n    \"grade\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{baseurl}}/assignmentsubmission/586",
+						"url": "{{baseurl}}/assignmentsubmission/{{submissionId}}",
 						"description": "Request for resubmission of assignment."
 					},
 					"response": []
@@ -944,29 +944,29 @@
 	],
 	"variable": [
 		{
-			"id": "827ce5c0-9bcd-407f-bca5-9f63974d2f90",
+			"id": "4563d1ff-059b-4aa0-8225-16a337fde896",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "d52f80a3-189c-495a-aa91-50f90d667ed1",
+			"id": "7bb22009-858c-42e3-aedf-50b036a2027a",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "6ce3aa93-e87c-4afe-91fe-1ad1f1eaeb11",
+			"id": "c5919231-a5ad-471d-87a5-e91fd7109e23",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "2228887d-1232-4615-bd5e-16de29d688f2",
+			"id": "b4ad6ca1-ec87-47a4-b642-4dd4cd95d104",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "2abc50a2-f43e-4eee-bc3c-fa3479f731e9",
+			"id": "39a2d29e-1b24-4780-b3f3-a5eb3061a887",
 			"key": "assignmentId",
 			"value": ""
 		}
