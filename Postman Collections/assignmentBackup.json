@@ -544,7 +544,20 @@
 								"exec": [
 									"pm.test(\"Status code is 404\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
-									"});"
+									"});\r",
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -606,18 +619,18 @@
 	],
 	"variable": [
 		{
-			"id": "a8376dc9-56e5-463d-a8ad-c53ee2dba1c5",
+			"id": "46391faa-d61f-467d-b4c6-9964c9e62c9c",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "81c1c5be-7b82-49e1-8682-5a26fcd069b4",
+			"id": "14527c71-dedc-4920-96d5-7ee5182145bf",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "0caca176-94ac-4d6f-8642-710dbdca19ce",
+			"id": "58f61f00-4c33-4f23-974e-76cc03a7879c",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
