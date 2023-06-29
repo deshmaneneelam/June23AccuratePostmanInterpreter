@@ -545,7 +545,8 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"url": "{{baseurl}}/users/users/{{userDeleteId}}"
+						"url": "{{baseurl}}/users/users/{{userDeleteId}}",
+						"description": "StartFragment\n\nDelete user details with a given userID\n\nBase Uri : [https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms](https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms)\n\nEndPoint : /users/users/{userID} \n\nSuccess : 200 OK \n\n  \n\nEndFragment"
 					},
 					"response": []
 				}
@@ -1061,7 +1062,7 @@
 	],
 	"variable": [
 		{
-			"id": "2cbb7fc9-4a9d-44b1-8d4d-3927bd721a97",
+			"id": "15e7019e-b520-4f46-82b1-95fd528fa54d",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
