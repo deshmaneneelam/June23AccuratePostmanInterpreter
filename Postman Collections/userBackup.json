@@ -564,9 +564,7 @@
 									"    pm.response.to.not.have.status(200);",
 									"});",
 									"",
-									"pm.test(\"Response code is 200 OK\", function () {",
-									"    pm.response.to.not.have.status(200);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -646,21 +644,6 @@
 									"pm.test(\"Response status code is 404 Not Found \", function () {",
 									"    pm.response.to.have.status(404);",
 									"});",
-									"",
-									"pm.test(\"Verify userId starts with U\", function () {",
-									"  var responseData = pm.response.json();",
-									"  var userId = responseData.user.userId;",
-									"  pm.expect(userId).to.startWith(\"U\");",
-									"});",
-									"",
-									"pm.test(\"Verify phoneNumber is not empty\", function () {",
-									"  var responseData = pm.response.json();",
-									"  var phoneNumber = responseData.user.userPhoneNumber;",
-									"  pm.expect(phoneNumber).to.not.be.empty;",
-									"});",
-									"",
-									"",
-									"",
 									"",
 									""
 								],
@@ -1071,7 +1054,7 @@
 	],
 	"variable": [
 		{
-			"id": "fd96f784-414f-4fb4-b692-98600e32b9d7",
+			"id": "e11433c3-0cd8-4afc-8ad9-169d973e5dc6",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
