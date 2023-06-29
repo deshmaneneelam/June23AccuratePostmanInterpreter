@@ -692,7 +692,8 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}//users/users/roleStatus"
+						"url": "{{baseurl}}//users/users/roleStatus",
+						"description": "StartFragment\n\nStatus Code : \n\nCreated - 201 Ok  \n\nInvalid details - 400 – Bad Request  with Error Message & Boolean Success details\n\nExample Error Message - Failed to create new User as phone number {No} already exists\n\n  \n\nEndFragment"
 					},
 					"response": [
 						{
@@ -858,7 +859,8 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}//users/users/{{userUpdateId}}"
+						"url": "{{baseurl}}//users/users/{{userUpdateId}}",
+						"description": "StartFragment\n\nPUT Request to update user details with a invalid user id.\n\nStartFragment\n\nStatus Code :\n\n404 Not Found with message and boolean success details - for invalid User id\n\nEndFragment"
 					},
 					"response": []
 				},
@@ -1065,7 +1067,7 @@
 	],
 	"variable": [
 		{
-			"id": "ed2dcab5-bdd5-483c-88ef-8981fe8382f5",
+			"id": "39133653-8893-4588-9522-73f253916d4c",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
