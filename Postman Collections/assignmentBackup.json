@@ -486,8 +486,8 @@
 							"script": {
 								"id": "2744e23c-343f-4a1d-bb69-93b4a4178cd0",
 								"exec": [
-									"pm.test(\"Status code is 404\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -597,18 +597,18 @@
 	],
 	"variable": [
 		{
-			"id": "8e81dc9e-5ec2-4f55-9951-a9e8c6ce6b78",
+			"id": "3047a15a-89f9-45e5-96a2-806c98c45698",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "ba5fa9ca-48bf-4258-9c13-ae65f5c87a3b",
+			"id": "6f1bf625-4da2-46ae-9f58-25e7a8b6cbf2",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "9806b7e1-b2bd-4531-a5eb-d547870e24bd",
+			"id": "18484a7e-36d9-4761-bf4e-07978a79a0dd",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
