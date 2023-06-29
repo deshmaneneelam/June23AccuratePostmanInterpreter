@@ -522,7 +522,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseurl}}/batch"
+						"url": "{{baseurl}}/batch",
+						"description": "StartFragment\n\nRequest to get all batches using a invalid endpoint.\n\nStartFragment\n\nStatus Code :  \n404: Error with Message (Eg: \"message\": \"no record found with programName\", \"success\": false)\n\nEndFragment"
 					},
 					"response": []
 				},
