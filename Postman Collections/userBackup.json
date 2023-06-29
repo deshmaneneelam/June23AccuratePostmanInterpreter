@@ -1056,12 +1056,12 @@
 				}
 			],
 			"id": "7282d51e-547b-4fd2-bed8-bf23e0f7ae40",
-			"description": "StartFragment\n\n**This folder holds Negative test scenarios for Assignment Submit Module.**\n\nEndFragment"
+			"description": "StartFragment\n\n**This folder holds Negative test scenarios for User Module.**\n\nEndFragment"
 		}
 	],
 	"variable": [
 		{
-			"id": "a4ad57ae-b87b-44e5-a88a-fecc7cadc236",
+			"id": "2cbb7fc9-4a9d-44b1-8d4d-3927bd721a97",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
