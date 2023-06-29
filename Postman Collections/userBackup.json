@@ -79,15 +79,14 @@
 									"",
 									"pm.test(\"Verify response fields have values\", function () {",
 									"    var jsonData = pm.response.json();",
-									"console.log(jsonData[0].user.userId);",
 									"    pm.expect(jsonData[0].user.userId).to.not.be.null;",
-									"    pm.expect(jsonData.userFirstName).to.not.be.null;",
-									"    pm.expect(jsonData.userLastName).to.not.be.null;",
-									"    pm.expect(jsonData.userPhoneNumber).to.not.be.null;",
-									"    pm.expect(jsonData.role.roleId).to.not.be.null;",
-									"    pm.expect(jsonData.role.roleName).to.not.be.null;",
-									"    pm.expect(jsonData.role.roleDesc).to.not.be.null;",
-									"    pm.expect(jsonData.userRoleStatus).to.not.be.null;",
+									"    pm.expect(jsonData[0].user.userFirstName).to.not.be.null;",
+									"    pm.expect(jsonData[0].user.userLastName).to.not.be.null;",
+									"    pm.expect(jsonData[0].user.userPhoneNumber).to.not.be.null;",
+									"    pm.expect(jsonData[0].user.role.roleId).to.not.be.null;",
+									"    pm.expect(jsonData[0].user.role.roleName).to.not.be.null;",
+									"    pm.expect(jsonData[0].user.role.roleDesc).to.not.be.null;",
+									"    pm.expect(jsonData[0].user.userRoleStatus).to.not.be.null;",
 									"",
 									"});",
 									""
@@ -1055,7 +1054,7 @@
 	],
 	"variable": [
 		{
-			"id": "6bccee34-9bfc-4683-ad05-576d414909a8",
+			"id": "2670abbe-5100-4647-961c-9890d811ab1f",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
