@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "295945be-9e53-48d8-a891-dfcf764f4da1",
 		"name": "User",
+		"description": "StartFragment\n\n# User Module: Write scenarios using GET,PUT,POST and DELETE.\n\nEndFragment",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -36,7 +37,7 @@
 							}
 						}
 					],
-					"_postman_id": "81f2dccb-f8ee-4dc5-ac56-ac1bf4e43ace",
+					"id": "81f2dccb-f8ee-4dc5-ac56-ac1bf4e43ace",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -94,7 +95,7 @@
 							}
 						}
 					],
-					"_postman_id": "e200f6de-092e-44ff-ac45-a6cfbe802a25",
+					"id": "e200f6de-092e-44ff-ac45-a6cfbe802a25",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -123,7 +124,7 @@
 							}
 						}
 					],
-					"_postman_id": "fe898ae0-de6a-49e9-9b84-e15e4e2226d3",
+					"id": "fe898ae0-de6a-49e9-9b84-e15e4e2226d3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -244,7 +245,7 @@
 							}
 						}
 					],
-					"_postman_id": "33a91eeb-e108-45e8-80c6-a3b6bc31e508",
+					"id": "33a91eeb-e108-45e8-80c6-a3b6bc31e508",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -403,7 +404,7 @@
 							}
 						}
 					],
-					"_postman_id": "815ca521-1d81-4c25-a903-78b4b65d59d5",
+					"id": "815ca521-1d81-4c25-a903-78b4b65d59d5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -483,7 +484,7 @@
 							}
 						}
 					],
-					"_postman_id": "119e70e9-da4f-40c3-a7ac-e28c3aa70fe1",
+					"id": "119e70e9-da4f-40c3-a7ac-e28c3aa70fe1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -533,7 +534,7 @@
 							}
 						}
 					],
-					"_postman_id": "f757d1bc-1ba9-47cb-b759-77d996e4a403",
+					"id": "f757d1bc-1ba9-47cb-b759-77d996e4a403",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -542,17 +543,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": "{{baseurl}}/users/users/{{userDeleteId}}"
 					},
 					"response": []
 				}
 			],
-			"_postman_id": "8f9560a4-1f2c-489d-a1fe-4192bd1bb257"
+			"id": "8f9560a4-1f2c-489d-a1fe-4192bd1bb257"
 		},
 		{
 			"name": "Negative Scenarios",
@@ -591,7 +589,7 @@
 							}
 						}
 					],
-					"_postman_id": "c6fdf76b-8f97-4a54-bc2f-63bd88fc0344",
+					"id": "c6fdf76b-8f97-4a54-bc2f-63bd88fc0344",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -676,7 +674,7 @@
 							}
 						}
 					],
-					"_postman_id": "dc964eb8-def7-4fde-bf17-a4d822444857",
+					"id": "dc964eb8-def7-4fde-bf17-a4d822444857",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -842,7 +840,7 @@
 							}
 						}
 					],
-					"_postman_id": "a1da0133-84af-4545-b222-ba31e34f16c1",
+					"id": "a1da0133-84af-4545-b222-ba31e34f16c1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -945,7 +943,7 @@
 							}
 						}
 					],
-					"_postman_id": "00bab118-33b6-4cfb-9451-d8abce57b4fc",
+					"id": "00bab118-33b6-4cfb-9451-d8abce57b4fc",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -999,7 +997,7 @@
 							}
 						}
 					],
-					"_postman_id": "00099599-65c7-4421-a4c3-aa87c1bfe523",
+					"id": "00099599-65c7-4421-a4c3-aa87c1bfe523",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1040,7 +1038,7 @@
 							}
 						}
 					],
-					"_postman_id": "b77b6a49-969d-4765-9bf1-16986a593004",
+					"id": "b77b6a49-969d-4765-9bf1-16986a593004",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1049,25 +1047,21 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": "{{baseurl}}/users/users/{{userDeleteId}}"
 					},
 					"response": []
 				}
 			],
-			"_postman_id": "7282d51e-547b-4fd2-bed8-bf23e0f7ae40"
+			"id": "7282d51e-547b-4fd2-bed8-bf23e0f7ae40"
 		}
 	],
 	"variable": [
 		{
-			"id": "f992bfaf-cff6-4df6-a0b8-8d354155276c",
+			"id": "796557d2-5398-422e-9735-b28941440d5e",
 			"key": "userBaseUrl",
-			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms",
-			"type": "string"
+			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
 	]
 }
