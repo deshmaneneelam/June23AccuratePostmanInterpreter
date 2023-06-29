@@ -572,6 +572,18 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "22d696e0-7c7b-42f6-a233-08e6322b734b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "1b918805-d145-43d3-a455-4c3bb3170d8b",
@@ -944,29 +956,29 @@
 	],
 	"variable": [
 		{
-			"id": "fa4bffc9-9eae-4349-89e1-7aee1097812e",
+			"id": "50d1724a-a146-47a0-a9e4-34802181cd41",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "aea9a899-c06f-4f8f-b3cc-beb449c7aec3",
+			"id": "850d239b-aced-420b-bb30-a2e561bc7db8",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "386448b0-69c7-4929-bf55-04f3bf5adb1d",
+			"id": "51da19c3-f9ba-40fe-9b5d-db0cc98db629",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "2b204db2-0148-4f9b-be4a-4175dab8e7a7",
+			"id": "e4c730b5-7070-46a1-9f12-f2cd8e34f8b5",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "7e5a8af9-0a40-4765-b318-03600a99d474",
+			"id": "e247452f-f4b8-450c-a496-78aa1146bbc1",
 			"key": "assignmentId",
 			"value": ""
 		}
