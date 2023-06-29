@@ -639,7 +639,8 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}/batches/{{batchId}}"
+						"url": "{{baseurl}}/batches/{{batchId}}",
+						"description": "StartFragmentStartFragment\n\n400 : Bad request  with Message and boolean success details\n\n  \n\nEndFragment\n\n  \n  \n\nStatus code:\n\n400 : Bad request  with Message and boolean success details\n\n  \n\nEndFragment"
 					},
 					"response": []
 				},
