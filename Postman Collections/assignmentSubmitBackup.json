@@ -65,7 +65,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n     \"assignmentDescription\": \"Create AssignmentByAccurate\",\r\n\t  \"assignmentId\": 0,\r\n\t  \"assignmentName\": \"Jun23-API-SDET-createAssignment-{{$randomInt}}\",\r\n\t  \"batchId\": 3603,\r\n\t  \"comments\": \"post create assignment\",\r\n\t  \"createdBy\": \"U284\",\r\n\t  \"dueDate\": \"2023-06-19T22:02:28.140+00:00\", \r\n\t  \"graderId\": \"U2118\",\r\n\t  \"pathAttachment1\": \"Filepath-1.json\",\r\n\t  \"pathAttachment2\": \"Filepath-2.json\",\r\n\t  \"pathAttachment3\": \"Filepath-3.json\",\r\n\t  \"pathAttachment4\": \"Filepath-4.json\",\r\n\t  \"pathAttachment5\": \"Filepath-5.json\"\r\n\r\n}\r\n",
+							"raw": " {\r\n     \"assignmentDescription\": \"Create AssignmentByAccurate\",\r\n\t  \"assignmentId\": 0,\r\n\t  \"assignmentName\": \"Jun23-API-SDET-createAssignment-{{$randomInt}}\",\r\n\t  \"batchId\": 3603,\r\n\t  \"comments\": \"post create assignment\",\r\n\t  \"createdBy\": \"U284\",\r\n\t  \"dueDate\": \"2023-06-30T22:02:28.140+00:00\", \r\n\t  \"graderId\": \"U2118\",\r\n\t  \"pathAttachment1\": \"Filepath-1.json\",\r\n\t  \"pathAttachment2\": \"Filepath-2.json\",\r\n\t  \"pathAttachment3\": \"Filepath-3.json\",\r\n\t  \"pathAttachment4\": \"Filepath-4.json\",\r\n\t  \"pathAttachment5\": \"Filepath-5.json\"\r\n\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -705,39 +705,39 @@
 	],
 	"variable": [
 		{
-			"id": "55309615-fa3f-4add-aaa0-49f424520a51",
+			"id": "384f512f-0e58-4c3f-8d66-6e72433c0867",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "fa63cd3e-48dc-47df-95d5-c60cca7c6105",
+			"id": "0cb799da-ad8e-432f-bb58-73bd0bf75e89",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "d78959ee-2e41-4ce5-9897-1ca7411bb47e",
+			"id": "f49dac87-5e5f-4e7d-959c-ca28a2e9046f",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "845f5c00-1a59-49cb-b9d3-9a92ae50c9ed",
+			"id": "00d6190c-bda4-44d8-ba68-15b959510f2f",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "4b5a06e8-4f92-4264-a50f-b52a3cd7b833",
+			"id": "2fe88cc4-8685-4dab-9c62-f69a0cb29434",
 			"key": "assignmentId",
 			"value": ""
 		},
 		{
-			"id": "c10a0c5d-4919-4b92-baab-d6542bb9d114",
+			"id": "c1d379e3-a90a-4cb5-b238-39b1bcd4a036",
 			"key": "assignmentIdForCreate",
 			"value": ""
 		},
 		{
-			"id": "b03e6f28-1fb1-4c53-8741-2b4bcbfc1bbc",
+			"id": "29544f3b-7f76-4e6c-8f7f-5d4d380c2869",
 			"key": "assignmentIdModule",
 			"value": ""
 		}
