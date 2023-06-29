@@ -389,14 +389,13 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"pm.test(\"Response status code is 400 Bad Request\", function () {",
-									"    pm.response.to.not.have.status(400);",
-									"});",
-									"pm.test(\"Verify userFirstName, userLastName, and userPhoneNumber\", function () {",
-									"  var responseData = pm.response.json();",
-									"  pm.expect(responseData.user.userFirstName).to.not.be.empty;",
-									"  pm.expect(responseData.user.userLastName).to.not.be.empty;",
-									"  pm.expect(responseData.user.userPhoneNumber).to.not.be.empty;",
+									"// Define the expected userId",
+									"var expectedUserId = pm.globals.get(\"userIdsCreated\");",
+									"",
+									"pm.test(\"Verify returned userId matches the expected userId\", function () {",
+									"    var jsonData = pm.response.json();",
+									"",
+									"    pm.expect(\"UserStatus Updated for User: \"+expectedUserId).to.equal(\"\");",
 									"});",
 									""
 								],
@@ -1067,7 +1066,7 @@
 	],
 	"variable": [
 		{
-			"id": "a4e950b7-4b42-4a93-b6a4-7fc92fc3b621",
+			"id": "cc98d658-654d-4fb6-9f01-725ed8e433db",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
