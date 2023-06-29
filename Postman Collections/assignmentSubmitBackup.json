@@ -155,15 +155,15 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6d9d299f-0aaa-47f8-bf89-6c9e72c58938",
+								"id": "559cf98e-c0e3-4af8-88e8-5508ff73322c",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
 									"const response = pm.response.json();\r",
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    var assId = pm.collectionVariables.get(assignmentId);\r",
+									"pm.test(\"AssignmentId is not matching \", function () {\r",
+									"    var assId = pm.collectionVariables.get('assignmentId');\r",
 									"    console.log(\"assignmentId ::\"+assId);\r",
 									"    pm.expect(res.assignmentId).to.eql(assId);\r",
 									"});\r",
@@ -183,7 +183,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"assignmentId\": 1661,\r\n        \"userId\": \"U3606\",\r\n        \"subDesc\": \"description\",\r\n        \"subComments\": \"comments\",\r\n        \"subPathAttach1\": \"bc.dovc\",\t\t\r\n        \"subDateTime\": \"07-01-2023 01:32:50\",\r\n        \"gradedBy\": \"U4353\",\r\n        \"gradedDateTime\": \"06-29-2023 01:32:50\",\r\n\t\t\"grade\" : 1\r\n\t}",
+							"raw": "{\r\n        \"assignmentId\": 1661,\r\n        \"userId\": \"U3606\",\r\n        \"subDesc\": \"desription\",\r\n        \"subComments\": \"comments\",\r\n        \"subPathAttach1\": \"bc.dovc\",\t\t\r\n        \"subDateTime\": \"07-01-2023 01:32:50\",\r\n        \"gradedBy\": \"U4353\",\r\n        \"gradedDateTime\": \"06-29-2023 01:32:50\",\r\n\t\t\"grade\" : 1\r\n\t}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -979,29 +979,29 @@
 	],
 	"variable": [
 		{
-			"id": "4ea51c85-dd75-4a6b-8fd2-a65e40693ec2",
+			"id": "c4112392-b450-445e-b1de-4209f5edc38f",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "df800e15-7461-4747-ac33-98cf4a430d37",
+			"id": "239c0022-05c2-439e-8fd9-d474cf541f42",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "94a43961-b113-480e-a504-97955e5a0372",
+			"id": "3b199fda-3d6a-4b7e-a65e-b6820de0c982",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "207e978f-0583-4776-a816-fcf7a6432e7c",
+			"id": "44ede7c2-aa98-489c-a10d-3b8230f3fafb",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "fe8a8673-8b6d-4f00-a710-217d0283b6a7",
+			"id": "bc3d61d6-6541-491b-b6ec-d8b20462aebe",
 			"key": "assignmentId",
 			"value": ""
 		}
