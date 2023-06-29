@@ -67,7 +67,7 @@
 							}
 						}
 					],
-					"_postman_id": "d822c6c9-5ca5-41a5-8ab0-7c7bf9b873cf",
+					"id": "d822c6c9-5ca5-41a5-8ab0-7c7bf9b873cf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -128,7 +128,7 @@
 							}
 						}
 					],
-					"_postman_id": "e2f31eee-661a-41df-a068-332083e28f93",
+					"id": "e2f31eee-661a-41df-a068-332083e28f93",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -174,7 +174,7 @@
 							}
 						}
 					],
-					"_postman_id": "b0bb3509-5f0c-40b4-be4c-4ed5308e8d8c",
+					"id": "b0bb3509-5f0c-40b4-be4c-4ed5308e8d8c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -197,7 +197,7 @@
 				},
 				{
 					"name": "resubmit assignment",
-					"_postman_id": "9707026b-0857-4d1e-a594-dfa4f01482c3",
+					"id": "9707026b-0857-4d1e-a594-dfa4f01482c3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -293,7 +293,7 @@
 							}
 						}
 					],
-					"_postman_id": "0e167f40-aabc-48a5-b932-3df87151b607",
+					"id": "0e167f40-aabc-48a5-b932-3df87151b607",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -313,8 +313,7 @@
 							"variable": [
 								{
 									"key": "user_id",
-									"value": "U3606",
-									"type": "string"
+									"value": "U3606"
 								}
 							]
 						},
@@ -343,7 +342,7 @@
 							}
 						}
 					],
-					"_postman_id": "f5cc3ff1-0495-4c75-82c1-792173edadc5",
+					"id": "f5cc3ff1-0495-4c75-82c1-792173edadc5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -363,8 +362,7 @@
 							"variable": [
 								{
 									"key": "batch_id",
-									"value": "",
-									"type": "string"
+									"value": ""
 								}
 							]
 						},
@@ -402,7 +400,7 @@
 							}
 						}
 					],
-					"_postman_id": "59ab7191-cf87-4a30-87a7-91b86b7d532b",
+					"id": "59ab7191-cf87-4a30-87a7-91b86b7d532b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -422,8 +420,7 @@
 							"variable": [
 								{
 									"key": "assignment_id",
-									"value": "1661",
-									"type": "string"
+									"value": "1661"
 								}
 							]
 						},
@@ -451,7 +448,7 @@
 							}
 						}
 					],
-					"_postman_id": "b2dba968-59c6-4519-b623-2bed491f5421",
+					"id": "b2dba968-59c6-4519-b623-2bed491f5421",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -471,8 +468,7 @@
 							"variable": [
 								{
 									"key": "student_id",
-									"value": "U3606",
-									"type": "string"
+									"value": "U3606"
 								}
 							]
 						},
@@ -502,7 +498,7 @@
 							}
 						}
 					],
-					"_postman_id": "27c82e1c-7583-4abd-b858-1e7bea1f09f2",
+					"id": "27c82e1c-7583-4abd-b858-1e7bea1f09f2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -522,8 +518,7 @@
 							"variable": [
 								{
 									"key": "batch_id",
-									"value": "2910",
-									"type": "string"
+									"value": "2910"
 								}
 							]
 						},
@@ -552,7 +547,7 @@
 							}
 						}
 					],
-					"_postman_id": "7f425f48-dca2-458b-86df-59c6e061aa99",
+					"id": "7f425f48-dca2-458b-86df-59c6e061aa99",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -571,8 +566,7 @@
 							"variable": [
 								{
 									"key": "submission_id",
-									"value": "{{submissionId}}",
-									"type": "string"
+									"value": "{{submissionId}}"
 								}
 							]
 						}
@@ -580,7 +574,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "1b918805-d145-43d3-a455-4c3bb3170d8b",
+			"id": "1b918805-d145-43d3-a455-4c3bb3170d8b",
 			"description": "**This folder holds positive test scenarios for Assignment Submit Module.**"
 		},
 		{
@@ -608,7 +602,7 @@
 							}
 						}
 					],
-					"_postman_id": "0e7f468f-686d-41cf-91bb-f74dd54fd67f",
+					"id": "0e7f468f-686d-41cf-91bb-f74dd54fd67f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -627,8 +621,7 @@
 							"variable": [
 								{
 									"key": "assignmentsubmission",
-									"value": null,
-									"type": "any"
+									"value": null
 								}
 							]
 						},
@@ -658,7 +651,7 @@
 							}
 						}
 					],
-					"_postman_id": "d3140b4f-1d0f-4278-bb02-d7916abdc2ad",
+					"id": "d3140b4f-1d0f-4278-bb02-d7916abdc2ad",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -678,8 +671,7 @@
 							"variable": [
 								{
 									"key": "user_id",
-									"value": "10",
-									"type": "string"
+									"value": "10"
 								}
 							]
 						},
@@ -709,7 +701,7 @@
 							}
 						}
 					],
-					"_postman_id": "62b1ec95-b078-4e0e-b3bf-abb614208b62",
+					"id": "62b1ec95-b078-4e0e-b3bf-abb614208b62",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -729,8 +721,7 @@
 							"variable": [
 								{
 									"key": "batch_id",
-									"value": "",
-									"type": "string"
+									"value": ""
 								}
 							]
 						},
@@ -760,7 +751,7 @@
 							}
 						}
 					],
-					"_postman_id": "de6a0fcd-a519-4db4-ae3d-515c98b4286a",
+					"id": "de6a0fcd-a519-4db4-ae3d-515c98b4286a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -780,8 +771,7 @@
 							"variable": [
 								{
 									"key": "assignment_id",
-									"value": "156",
-									"type": "string"
+									"value": "156"
 								}
 							]
 						},
@@ -811,7 +801,7 @@
 							}
 						}
 					],
-					"_postman_id": "9eed95c1-f1e8-40e1-b573-aa7a7281c06a",
+					"id": "9eed95c1-f1e8-40e1-b573-aa7a7281c06a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -831,8 +821,7 @@
 							"variable": [
 								{
 									"key": "student_id",
-									"value": "U75",
-									"type": "string"
+									"value": "U75"
 								}
 							]
 						},
@@ -865,7 +854,7 @@
 							}
 						}
 					],
-					"_postman_id": "5b2ad29d-620c-4e3a-ade6-04d045e59d67",
+					"id": "5b2ad29d-620c-4e3a-ade6-04d045e59d67",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -899,7 +888,7 @@
 							}
 						}
 					],
-					"_postman_id": "7e81c8ec-6826-4906-9623-9fa59e5bc359",
+					"id": "7e81c8ec-6826-4906-9623-9fa59e5bc359",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -918,8 +907,7 @@
 							"variable": [
 								{
 									"key": "submission_id",
-									"value": "5",
-									"type": "string"
+									"value": "5"
 								}
 							]
 						},
@@ -928,7 +916,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "67dd4862-e060-4118-9a85-6b8f1255a7aa",
+			"id": "67dd4862-e060-4118-9a85-6b8f1255a7aa",
 			"description": "This folder holds Negative test scenarios for Assigment submit module of lms API."
 		}
 	],
@@ -956,35 +944,31 @@
 	],
 	"variable": [
 		{
-			"id": "99a28de5-9a77-40b7-b9f9-3bc94a571d97",
+			"id": "ab301ed5-01ea-480c-bbef-0c63f32b6841",
 			"key": "user_id",
-			"value": "U75",
-			"type": "string"
+			"value": "U75"
 		},
 		{
-			"id": "3115d42c-0fcb-4ad3-83d5-cbff509430db",
+			"id": "0785905d-4616-456f-8b05-f8580504c199",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "d90a956a-17d6-449c-97f2-fc2e61db45cb",
+			"id": "c7596380-f720-49f0-a82a-81a0c8496889",
 			"key": "submissionId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "598fac0e-7c63-4c58-9738-7ba649696b24",
+			"id": "aaa253f1-1811-493c-9717-460356e80832",
 			"key": "userId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "fa58fdff-191f-4956-b251-1bd1341ee0cb",
+			"id": "a40f33ca-4d8b-42e9-a7fb-388606db9ee5",
 			"key": "assignmentId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		}
 	]
 }
