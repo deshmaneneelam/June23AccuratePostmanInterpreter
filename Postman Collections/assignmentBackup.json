@@ -503,7 +503,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n        \"assignmentId\": 2386,\r\n        \"assignmentName\": \"{{teamNameForSubmit}}-1688006968041\",\r\n        \"assignmentDescription\": \"{{assignmentDescription}}\",\r\n        \"comments\": null,\r\n        \"dueDate\": \"2023-08-19T23:59:58.140+00:00\",\r\n        \"pathAttachment1\": \"path1\",\r\n        \"pathAttachment2\": \"path2\",\r\n        \"pathAttachment3\": \"path3\",\r\n        \"pathAttachment4\": \"path4\",\r\n        \"pathAttachment5\": \"path5\",\r\n        \"batchId\": 1,\r\n        \"createdBy\": \"U22\",\r\n        \"graderId\": \"U22\"\r\n    },"
+							"raw": " {\r\n        \"assignmentId\": ,\r\n        \"assignmentName\": \"{{teamNameForSubmit}}-1688006968041\",\r\n        \"assignmentDescription\": \"{{assignmentDescription}}\",\r\n        \"comments\": null,\r\n        \"dueDate\": \"2023-08-19T23:59:58.140+00:00\",\r\n        \"pathAttachment1\": \"path1\",\r\n        \"pathAttachment2\": \"path2\",\r\n        \"pathAttachment3\": \"path3\",\r\n        \"pathAttachment4\": \"path4\",\r\n        \"pathAttachment5\": \"path5\",\r\n        \"batchId\": 1,\r\n        \"createdBy\": \"U22\",\r\n        \"graderId\": \"U22\"\r\n    },"
 						},
 						"url": {
 							"raw": "{{baseurl}}/assignments/:assignmentId",
@@ -597,13 +597,13 @@
 	],
 	"variable": [
 		{
-			"id": "4e892ab1-e4f7-4973-99b4-3ff8ca247b9e",
+			"id": "a998a080-9003-47fa-bb10-7128ad1b1c95",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "06340cfe-62d6-4989-9933-d155c9703ddd",
+			"id": "fa3f1e59-12b7-41f0-957b-d51b07e66d89",
 			"key": "assignmentIdModule",
 			"value": ""
 		}
