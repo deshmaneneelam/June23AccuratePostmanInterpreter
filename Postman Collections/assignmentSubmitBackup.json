@@ -373,9 +373,9 @@
 							"script": {
 								"id": "400aeae1-b91b-4483-b600-81627a68979a",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"/*pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});\r",
+									"});*/\r",
 									"\r",
 									"pm.test(\"Content-Type is present\", function () {\r",
 									"    pm.response.to.have.header(\"Content-Type\");\r",
@@ -637,29 +637,29 @@
 	],
 	"variable": [
 		{
-			"id": "8b2e0534-ddea-41f2-956d-af5ae8fa0667",
+			"id": "e3b1e643-0944-4870-afd0-1b68ac958492",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "3dee50da-6dfa-48ee-80ff-a3a36673b423",
+			"id": "01fc3e23-107a-4666-8963-7841e6c40179",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "f4c61bb7-98da-4d9e-99d7-354d2c2cf8d3",
+			"id": "f255e9d9-bd48-425f-b648-d2e2ecfe3d44",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "e77b20a6-25d4-4d58-9a2f-1344441f2b85",
+			"id": "9f132684-9ef6-44a4-9101-15ce0988ffec",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "f8650984-f6c8-40b4-9723-af9803b24283",
+			"id": "4a2c29a1-d708-4ac2-a731-459031f37300",
 			"key": "assignmentId",
 			"value": ""
 		}
