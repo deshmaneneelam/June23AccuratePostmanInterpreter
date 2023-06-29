@@ -598,7 +598,7 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseurl}}//users/users/{{userModuleUserId}}",
-						"description": "StartFragment\n\nGET request to\n\nStatus Code  : \n\nFor Invalid Id - 404 – Not Found with Error message and Boolean success details. (Eg : User Id {userId} is not found)\n\nEndFragment"
+						"description": "StartFragment\n\nGET request to get a user details with invalid user id.\n\nStatus Code :\n\nFor Invalid Id - 404 – Not Found with Error message and Boolean success details. (Eg : User Id {userId} is not found)\n\nEndFragment"
 					},
 					"response": []
 				},
@@ -1067,7 +1067,7 @@
 	],
 	"variable": [
 		{
-			"id": "58117b15-12d7-47f6-b91f-6fca2759f6cf",
+			"id": "a4e950b7-4b42-4a93-b6a4-7fc92fc3b621",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
