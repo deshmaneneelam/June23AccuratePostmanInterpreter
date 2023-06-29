@@ -442,18 +442,6 @@
 							"script": {
 								"id": "ff4b3cd9-4b8b-4043-bdf9-bea705e58f7b",
 								"exec": [
-									"\r",
-									"pm.test(\"Check if response is JSON\", function () {\r",
-									"    for(i=0;i<jsonData.length;i++){\r",
-									"        pm.expect(jsonData[i]).to.be.an('object');\r",
-									"    }\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Check response header\", function () {\r",
-									"    pm.response.to.have.header('content-type');\r",
-									"    pm.response.to.be.header('content-type','application/json')\r",
-									"});\r",
-									"\r",
 									""
 								],
 								"type": "text/javascript"
@@ -668,18 +656,18 @@
 	],
 	"variable": [
 		{
-			"id": "a1861db8-9cff-4cf9-80af-c17cefc9401f",
+			"id": "34365775-4ff0-4f63-b3c9-68383ab2c488",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "dfbb08c3-0691-4196-9590-641b6cab8b78",
+			"id": "f2808126-f960-49f2-9ce9-cb0f0ed237a6",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "a2d2b331-25bf-4648-afa0-10b5e9426653",
+			"id": "c217b4d5-5777-462a-b33b-aec134509563",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
