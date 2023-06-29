@@ -574,7 +574,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Check if ID is deleted",
 					"id": "22d696e0-7c7b-42f6-a233-08e6322b734b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -956,29 +956,29 @@
 	],
 	"variable": [
 		{
-			"id": "50d1724a-a146-47a0-a9e4-34802181cd41",
+			"id": "02779c9b-475a-47be-8231-ef1c27fcdb69",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "850d239b-aced-420b-bb30-a2e561bc7db8",
+			"id": "20ded8e1-ea42-4981-84e6-58d0f3d1628e",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "51da19c3-f9ba-40fe-9b5d-db0cc98db629",
+			"id": "e3864009-6435-4197-96c8-de2d51fc911b",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "e4c730b5-7070-46a1-9f12-f2cd8e34f8b5",
+			"id": "cd5db911-46fb-4249-825d-8327a97f8b50",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "e247452f-f4b8-450c-a496-78aa1146bbc1",
+			"id": "f289e85b-e923-4179-a420-8017ad8e3c40",
 			"key": "assignmentId",
 			"value": ""
 		}
