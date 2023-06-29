@@ -312,7 +312,7 @@
 							"variable": [
 								{
 									"key": "user_id",
-									"value": "U3606"
+									"value": "{{userId}}"
 								}
 							]
 						},
@@ -979,29 +979,29 @@
 	],
 	"variable": [
 		{
-			"id": "c4112392-b450-445e-b1de-4209f5edc38f",
+			"id": "758ff387-e854-41ed-961f-f11662986bad",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "239c0022-05c2-439e-8fd9-d474cf541f42",
+			"id": "418ca7fc-dada-4150-9139-8f8f5d84c008",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "3b199fda-3d6a-4b7e-a65e-b6820de0c982",
+			"id": "9e3a05f4-bc9e-49c6-924c-96db10d0281c",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "44ede7c2-aa98-489c-a10d-3b8230f3fafb",
+			"id": "614b8285-4b9c-4aa5-ba95-5a8a4e212b96",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "bc3d61d6-6541-491b-b6ec-d8b20462aebe",
+			"id": "ea000907-cd34-46bb-9f83-4fb5f78b81f3",
 			"key": "assignmentId",
 			"value": ""
 		}
