@@ -355,7 +355,8 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseurl}}//assignments/{{assignmentId}}"
+						"url": "{{baseurl}}//assignments/{{assignmentId}}",
+						"description": "StartFragment\n\n## DELETE Request  - with ID\n\n  \n\nBaseURl : [https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms](https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms)\n\nEndpoint : /assignments/{assignmentID}\n\n  \n\nStatus Code: \n\n200 Ok with message and boolean success details\n\n  \n\nEndFragment"
 					},
 					"response": []
 				}
@@ -586,7 +587,7 @@
 	],
 	"variable": [
 		{
-			"id": "2c73bbca-a68d-4c1b-834e-930b6879dc17",
+			"id": "7b895e7b-3e65-4ac5-8e0e-279c268ec26d",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
