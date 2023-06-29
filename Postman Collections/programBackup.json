@@ -1,0 +1,1132 @@
+{
+	"info": {
+		"_postman_id": "3110c917-c034-4e21-9359-3e34fc163e3f",
+		"name": "Program",
+		"description": "This Collection Module is used to create, get , update and delete a Program.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Positive Scenarios",
+			"item": [
+				{
+					"name": "get all programs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "73fdad18-717f-417e-8142-a4a708a3f508",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"console.log(jsonData);\r",
+									"\r",
+									"pm.test(\"Validate Response\", () => {\r",
+									"  // Check if the response is an array\r",
+									"  pm.expect(jsonData).to.be.an('array');\r",
+									"  // Check if the response array is not empty\r",
+									"  pm.expect(jsonData.length).to.be.above(0);\r",
+									"  // Validate properties for each program object\r",
+									"  jsonData.forEach(program => {\r",
+									"    pm.expect(program).to.have.property(\"programId\").and.to.be.a('number');\r",
+									"    pm.expect(program).to.have.property(\"programName\").and.to.be.a('string');\r",
+									"    pm.expect(program).to.have.property(\"programDescription\");\r",
+									"    pm.expect(program).to.have.property(\"programStatus\");\r",
+									"    pm.expect(program).to.have.property(\"creationTime\");\r",
+									"    pm.expect(program).to.have.property(\"lastModTime\");\r",
+									"  });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "4a735a7c-fc0f-4d37-9e9e-6724bde3ce09",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": "{{baseurl}}/allPrograms",
+						"description": "StartFragment\n\nBaseURL : https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint :/allPrograms\n\n  \n\nResponses:\n\n\\[ {\n\n  \"programId\": 0,\n\n  \"programName\": “String\",\n\n  \"programDescription\": \"String\",\n\n  \"programStatus\": \"String\",\n\n  \"creationTime\": TimeStamp,\n\n  \"lastModTime\": TimeStamp\n\n}   \\]\n\n  \n\nStatusCode:   200 : ok\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "create new program",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "efbc70e6-e74b-4341-8510-30037866530d",
+								"exec": [
+									"const teamName = pm.variables.get(\"TeamName\");\r",
+									"const programName = pm.variables.get(\"ProgramName\");\r",
+									"var snum = \"S\" + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"\r",
+									"pm.globals.set(\"programName_env\", `${teamName}-${programName}-${snum}`);\r",
+									"\r",
+									"\r",
+									"//////////////////////////////////This code sets an environment variable manually///////////////////////////////////////////////////////////////////////////////////////\r",
+									"//const serialNumber = pm.environment.get(\"serialNumber\");\r",
+									"//const nextSerialNumber = (parseInt(serialNumber) + 1).toString().padStart(3, \"0\");\r",
+									"//pm.environment.set(\"serialNumber\", nextSerialNumber);\r",
+									"//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "77ba091f-7950-44d3-9519-b039328142d8",
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"console.log(jsonData);\r",
+									"\r",
+									"//create global variable programId and programName variable \r",
+									"pm.globals.set(\"programId_env\",jsonData.programId);\r",
+									"pm.globals.set(\"programName_env\",jsonData.programName);\r",
+									"//pm.globals.set(\"programDesc_env\",jsonData.programDescription);\r",
+									"//pm.globals.set(\"programStatus_env\",jsonData.programStatus);\r",
+									"//pm.globals.set(\"programpayload\",JSON.stringify(jsonData));\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The response has all properties\", () => {\r",
+									"    //parse the response JSON and test three properties\r",
+									"  pm.expect(jsonData).to.not.be.empty;\r",
+									"  const expectedProgramId = pm.globals.get(\"programId_env\");\r",
+									"  const expectedProgramName = pm.globals.get(\"programName_env\");\r",
+									"  pm.expect(jsonData.programName).to.eql(expectedProgramName);\r",
+									"  pm.expect(jsonData.programId).to.eql(expectedProgramId);\r",
+									"   \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "22e68e76-bcba-45ba-a3ba-4ee694b00ad1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"{{ProgramDescription}}\",\r\n  \"programName\": \"{{programName_env}}\",\r\n  \"programStatus\": \"{{ProgramStatus}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/saveprogram",
+						"description": "StartFragment\n\nMandatory Fields : programName , programStatus\n\nAutogenerated : programID ,creationTime, lastModTime \n\n  \n\nBaseURL : https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint : /saveprogram\n\n  \n\nRequest Body : \n\n{\n\n  \"programDescription\": \"String\",\n\n  \"programName\": \"String\",\n\n  \"programStatus\": \"String\"\n\n}\n\nResponses:\n\n{   \"programId\": 0,\n\n  \"programName\": “String\",\n\n  \"programDescription\": \"String\",\n\n  \"programStatus\": \"String\",\n\n  \"creationTime\": TimeStamp,\n\n  \"lastModTime\": TimeStamp  }\n\nStatus Code :\n\n201: Created\n\n400 : Error  - For Program already exists\n\n500: Internal Server Error – For Null Program Status\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "get program by valid Id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8e023478-4255-46da-a7ca-1f74e2d33be4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc679bea-a0c7-49ac-bf7c-24aeedd47914",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"values of Json fields\" ,()=>\r",
+									"{\r",
+									"  var jsonData=pm.response.json();\r",
+									"  console.log(jsonData);\r",
+									"  pm.expect(jsonData.programId).to.eql(pm.globals.get(\"programId_env\"));\r",
+									"  pm.expect(jsonData.programName).to.eql(pm.globals.get(\"programName_env\"));\r",
+									"  });\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "b27737bc-43bb-4b36-a565-5018a17381cf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/programs/{{programId_env}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"programs",
+								"{{programId_env}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "StartFragment\n\nBaseURL : [https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms](https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms)\n\nEndpoint : /programs/{programId}\n\nResponse Body:\n\n{\n\n\"programId\": 0,\n\n\"programName\": “String\",\n\n\"programDescription\": \"String\",\n\n\"programStatus\": \"String\",\n\n\"creationTime\": TimeStamp,\n\n\"lastModTime\": TimeStamp\n\n}\n\nStatus Code :\n\n200 : ok\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "update program by name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d4785788-084c-442e-8f55-b18f829bd5b0",
+								"exec": [
+									"var jsonData=pm.response.json();\r",
+									" console.log(jsonData);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check Program Name Update\", () => {\r",
+									"  const jsonData = pm.response.json();\r",
+									"  const updatedProgramName = pm.variables.get(\"programName_env\") + \" Updated\";\r",
+									"  pm.expect(jsonData.programName).to.equal(updatedProgramName);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "5847beee-d365-4f64-9842-83b06e3e1ee2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"Updated API Testers\",\r\n   \"programName\": \"{{programName_env}} Updated\",\r\n  \"programStatus\": \"Updated to Inactive\",\r\n  \"creationTime\": \"2023-06-26T23:39:53.309+00:00\",\r\n    \"lastModTime\": \"2023-06-26T23:39:53.309+00:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/program/{{programName_env}}",
+						"description": "StartFragment\n\nMandatory Fields : programName , programStatus\n\n  \n\nBaseURL : https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint : /program/{programName}\n\n  \n\nRequest Body:\n\n{\n\n  \"programDescription\": \"String\",\n\n  \"programName\": \"String\",\n\n  \"programStatus\": \"String\"\n\n}\n\n  \n\nResponse Body:\n\n{\n\n  \"programId\": 0,\n\n  \"programName\": “String\",\n\n  \"programDescription\": \"String\",\n\n  \"programStatus\": \"String\",\n\n  \"creationTime\": TimeStamp,\n\n  \"lastModTime\": TimeStamp\n\n}\n\n  \n\nStatus Code: \n\n200 ok\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "update program by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a82bf12d-584e-47b9-b133-f38448792cde",
+								"exec": [
+									"  pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									" const jsonData = pm.response.json();\r",
+									" console.log(jsonData);\r",
+									"\r",
+									" pm.test(\"Check Program Name Update\", () => {\r",
+									"  const updatedProgramName = pm.variables.get(\"programName_env\") + \" Updated\";\r",
+									"  pm.expect(jsonData.programName).to.equal(updatedProgramName);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "1d35960f-ee44-4730-9c00-e9e7ce26ce94",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"Updated Hackathon\",\r\n  \"programId\": {{programId_env}},\r\n  \"programName\": \"{{programName_env}} Updated\",\r\n  \"programStatus\": \"Updated to Active\",\r\n  \"creationTime\": \"2023-06-26T23:39:53.309+00:00\",\r\n   \"lastModTime\": \"2023-06-26T23:39:53.309+00:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/putprogram/{{programId_env}}",
+						"description": "StartFragment\n\nMandatory Fields : programName , programStatus\n\n  \n\nBaseURL : https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint : /putprogram/{programId}\n\n  \n\nRequest Body:\n\n{\n\n  \"programDescription\": \"String\",\n\n  \"programId\": 0,\n\n  \"programName\": \"String\",\n\n  \"programStatus\": \"String\"\n\n}\n\n  \n\nResponse Body:\n\n{\n\n  \"programId\": 0,\n\n  \"programName\": “String\",\n\n  \"programDescription\": \"String\",\n\n  \"programStatus\": \"String\",\n\n  \"creationTime\": TimeStamp,\n\n  \"lastModTime\": TimeStamp\n\n}\n\n  \n\nStatus Code: \n\n200 ok\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "delete program  for valid id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7897374c-f35f-4d29-aa03-1bff2b93af58",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var responseBody = pm.response.text();\r",
+									"console.log(responseBody);\r",
+									"\r",
+									"pm.test(\"Delete Program by ID\", () => {\r",
+									"    const programId = pm.variables.get(\"programId_env\");\r",
+									"    pm.expect(responseBody).to.include(`Program Id-${programId} is deleted Successfully!`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "0701b895-51d6-4482-9190-b81f6881e79f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseurl}}/deletebyprogid/{{programId_env}}",
+						"description": "StartFragment\n\nBaseURL : https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint : /deletebyprogid/{programId}\n\n  \n\nStatus Code :\n\n  \n\n200 : ok  with Message (Eg: Message: Program Id-10 is deleted Successfully!)\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "get program by deleted Id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8e023478-4255-46da-a7ca-1f74e2d33be4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc679bea-a0c7-49ac-bf7c-24aeedd47914",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "4548b094-22c7-48ae-9b6c-8a58149dc0e3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/programs/{{programId_env}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"programs",
+								"{{programId_env}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "programId",
+									"value": "1783",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Copy of new Program",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "efbc70e6-e74b-4341-8510-30037866530d",
+								"exec": [
+									"const teamName = pm.variables.get(\"TeamName\");\r",
+									"const programName = pm.variables.get(\"ProgramName\");\r",
+									"\r",
+									"//set environment variable serialNum and increase it to random for every iteration\r",
+									"var snum = \"S\"+pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"SerialNum\",snum);\r",
+									"//get the serialNum and add it to the Program Name as per the pattern\r",
+									"const SerialNum = pm.environment.get(\"SerialNum\");\r",
+									"pm.environment.set(\"programName_env\", `${teamName}-${programName}-${SerialNum}`);\r",
+									"\r",
+									"//////////////////////////////////This code sets an environment variable manually///////////////////////////////////////////////////////////////////////////////////////\r",
+									"//const serialNumber = pm.environment.get(\"serialNumber\");\r",
+									"//const nextSerialNumber = (parseInt(serialNumber) + 1).toString().padStart(3, \"0\");\r",
+									"//pm.environment.set(\"serialNumber\", nextSerialNumber);\r",
+									"//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "77ba091f-7950-44d3-9519-b039328142d8",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"//create global variable programId and programName variable \r",
+									"pm.globals.set(\"programId_env\",jsonData.programId);\r",
+									"pm.globals.set(\"programName_env\",jsonData.programName);\r",
+									"pm.globals.set(\"programDesc_env\",jsonData.programDescription);\r",
+									"//pm.globals.set(\"programStatus_env\",jsonData.programStatus);\r",
+									" console.log(jsonData);\r",
+									" \r",
+									"  // Check if jsonData is not empty\r",
+									" pm.test(\"Check POST Request Response\", () => {\r",
+									"    pm.expect(jsonData).to.not.be.empty;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "ad3ccc65-cac8-48f0-961e-59c116dcc3cb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"{{ProgramDescription}}\",\r\n  \"programName\": \"{{programName_env}}\",\r\n  \"programStatus\": \"{{ProgramStatus}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "delete program by name",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7bd45a66-1b4f-4e46-8fb9-9455f83f0ac6",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "293224e0-729e-4936-98eb-45ed92f1f593",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var responseBody = pm.response.text();\r",
+									"console.log(responseBody);\r",
+									"\r",
+									"pm.test(\"Delete Program by Name\", () => {\r",
+									"    const programName = pm.variables.get(\"programName_env\");\r",
+									"    pm.expect(responseBody).to.include(`Program Name -${programName} is deleted Successfully!`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "0a6e3b2f-547a-4345-a12a-cb718c994e21",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseurl}}/deletebyprogname/{{programName_env}}",
+						"description": "StartFragment\n\nBaseURL : https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint : /deletebyprogname/{programName}\n\n  \n\nStatus Code :\n\n  \n\n200 : ok  with Message (Eg: Message: Program Name-{programName} is deleted Successfully!)\n\n  \n\nEndFragment"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "889e6796-4c89-4879-8457-5163d3fa87c7",
+			"description": "This Folder is used to test all the positive scenarios of Program module.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3dd3b087-a5e8-4915-bed0-c471a32b121f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "682c02e8-f6e2-4224-a6a1-cb08195e9926",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Negative Scenarios",
+			"item": [
+				{
+					"name": "get program by Invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f89cc80a-a820-405b-8faa-255da34acc57",
+								"exec": [
+									"pm.test(\" verify Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"console.log(jsonData);\r",
+									"\r",
+									"pm.test(\"Validating the response message\", () => {\r",
+									"    \r",
+									"   pm.expect(jsonData.message).to.match(/program with this: \\d+not found/);\r",
+									"    pm.expect(jsonData.success).to.be.false;\r",
+									"\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "9d0171f4-c2c7-43ac-a649-66fe5eee553f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/programs/:id",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"programs",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "99999",
+									"type": "string"
+								}
+							]
+						},
+						"description": "Request to get a program with invalid id.\n\nStartFragment\n\nStatus Code : \n\n404: Error  with message and Boolean Success detail  – For Invalid ProgramID\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "create exsiting program",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "503697d5-078b-4b44-acfc-85247149f33d",
+								"exec": [
+									"//const currentDate = pm.environment.get(\"currentDate\");\r",
+									"//const teamName = pm.variables.get(\"TeamName\");\r",
+									"//const programName = pm.variables.get(\"ProgramName\");\r",
+									"//const serialNumber = pm.globals.get(\"serialNumber\");\r",
+									"//pm.variables.set(\"programName\", '${teamName}-${programName}-${serialNumber}');\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "80d43cfc-9d1f-4131-ace9-aa968bb791ed",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									" const jsonData = pm.response.json();\r",
+									"console.log(jsonData);\r",
+									"\r",
+									"pm.test(\"Check the response body\", () => {\r",
+									"              pm.expect(jsonData.message).to.equal(\"cannot create program , since already exists\");\r",
+									"    pm.expect(jsonData.success).to.be.false;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "57ba4383-b029-4ba6-8fce-d41282731e30",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"API Hackathon\",\r\n  \"programName\": \"Jun23-API Testers-DA-S554\",\r\n  \"programStatus\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/saveprogram",
+						"description": "StartFragment\n\nRequest to create an existing program.\n\nStatus Code :\n\n400 : Error - For Program already exists\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "create program with Null status",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b800a1d4-8ec5-419b-95f5-1d7dae0ee1ee",
+								"exec": [
+									"\r",
+									"//const teamName = pm.variables.get(\"TeamName\");\r",
+									"//const programName = pm.variables.get(\"ProgramName\");\r",
+									"//const serialNumber = pm.globals.get(\"serialNumber\");\r",
+									"//pm.variables.set(\"programName\", `${teamName}-${programName}-${serialNumber}`);\r",
+									"\r",
+									"const programName_var = \"Jun23-API-hackathon-SDET-\"+pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.variables.set(\"programName\",programName_var);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "05bb3d6b-4eef-421b-b04c-c5edc32208d3",
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									"console.log(responseJson);\r",
+									"\r",
+									"pm.test(\"Check Response\", function () {\r",
+									"    \r",
+									"    const statusCode = pm.response.code;\r",
+									"\r",
+									"    if (statusCode === 400) {\r",
+									"        //pm.expect(responseJson.message).to.eql(\"cannot create program, since already exists\");\r",
+									"        pm.expect(responseJson.message).to.equal(\"cannot create program , since already exists\");\r",
+									"        pm.expect(responseJson.success).to.be.false;\r",
+									"    }\r",
+									"\r",
+									"    if (statusCode === 500) {\r",
+									"        pm.expect(responseJson.error).to.eql(\"Internal Server Error\");\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "dc7a4c38-0a6b-4e98-9b63-9b62f98775d4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"API Hackathon\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/saveprogram",
+						"description": "Request to create a program with null status.\n\nstatus code:\n\nStartFragment\n\n500: Internal Server Error – For Null Program Status.\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "create program withoutMandatory fields",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b800a1d4-8ec5-419b-95f5-1d7dae0ee1ee",
+								"exec": [
+									"\r",
+									"//const teamName = pm.variables.get(\"TeamName\");\r",
+									"//const programName = pm.variables.get(\"ProgramName\");\r",
+									"//const serialNumber = pm.globals.get(\"serialNumber\");\r",
+									"//pm.variables.set(\"programName\", `${teamName}-${programName}-${serialNumber}`);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "05bb3d6b-4eef-421b-b04c-c5edc32208d3",
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									"console.log(responseJson);\r",
+									"\r",
+									"pm.test(\"Check Response\", function () {\r",
+									"    \r",
+									"    const statusCode = pm.response.code;\r",
+									"\r",
+									"    if (statusCode === 400) {\r",
+									"        //pm.expect(responseJson.message).to.eql(\"cannot create program, since already exists\");\r",
+									"        pm.expect(responseJson.message).to.equal(\"cannot create program , since already exists\");\r",
+									"        pm.expect(responseJson.success).to.be.false;\r",
+									"    }\r",
+									"\r",
+									"    if (statusCode === 500) {\r",
+									"        pm.expect(responseJson.error).to.eql(\"Internal Server Error\");\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "2fed5245-348e-4c3f-b785-9bf70651fe87",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"API Hackathon\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/saveprogram",
+						"description": "Request to create a program without mandatory fields.\n\nStatus code:\n\nStartFragment\n\n500: Internal Server Error – For Null Program Status.\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "update program by Invalid id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d4785788-084c-442e-8f55-b18f829bd5b0",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									" \r",
+									"  var jsonData=pm.response.json();\r",
+									" console.log(jsonData);\r",
+									"\r",
+									" pm.test(\"Update Request - Invalid Program ID\", function () {\r",
+									"    // Check the status code\r",
+									"    pm.response.to.have.status(404);\r",
+									"    // Check the response body\r",
+									"    pm.response.to.have.jsonBody({\r",
+									"        \"message\": \"no list with such program\",\r",
+									"        \"success\": false\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "42907d49-b1ca-43b2-86d1-6b58f6a1f021",
+								"exec": [
+									"pm.globals.set(\"InvalidprogramId\", 9999);\r",
+									"pm.request.url.path[1] = pm.globals.get(\"InvalidprogramId\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "d07a5b2b-f8d5-49b8-be60-00f9da045c8a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"{{InvalidprogramId}}\",\r\n   \"programName\": \"Updated June 23- API Testers-SDET-S001\",\r\n  \"programStatus\": \"UpdatedInactive\",\r\n  \"creationTime\": \"2023-06-26T23:39:53.309+00:00\",\r\n    \"lastModTime\": \"2023-06-26T23:39:53.309+00:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/program/{{InvalidprogramId}}",
+						"description": "StartFragment\n\nRequest to update a program with invalid id.\n\nStatus Code:\n\n404: Error with message and boolean success detail – For Invalid ProgramId\n\n400 : Bad Request Missing field\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "update program by Invalid name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d4785788-084c-442e-8f55-b18f829bd5b0",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									" \r",
+									"  var jsonData=pm.response.json();\r",
+									" console.log(jsonData);\r",
+									"\r",
+									" pm.test(\"Update Request - Invalid Program ID\", function () {\r",
+									"    // Check the status code\r",
+									"    pm.response.to.have.status(404);\r",
+									"    // Check the response body\r",
+									"    pm.response.to.have.jsonBody({\r",
+									"        \"message\": \"no list with such program\",\r",
+									"        \"success\": false\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "42907d49-b1ca-43b2-86d1-6b58f6a1f021",
+								"exec": [
+									"pm.globals.set(\"Invalidprogramname\", 9999);\r",
+									"pm.request.url.path[1] = pm.globals.get(\"Invalidprogramname\");\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "42e7b8d6-3f50-4733-bb4a-cf2134ab6b1a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"Updated API Hackathon\",\r\n   \"programStatus\": \"UpdatedInactive\",\r\n  \"creationTime\": \"2023-06-26T23:39:53.309+00:00\",\r\n    \"lastModTime\": \"2023-06-26T23:39:53.309+00:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/program/{Invalidprogramname}",
+						"description": "StartFragment\n\nRequest to update a program with missing fields.\n\nStatus Code:\n\n404: Error with message and boolean success detail – For Invalid ProgramId\n\n400 : Bad Request Missing field\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "update program name with missing field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d4785788-084c-442e-8f55-b18f829bd5b0",
+								"exec": [
+									"  var jsonData=pm.response.json();\r",
+									" console.log(jsonData);\r",
+									"\r",
+									" pm.test(\"Update Request - Missing field\", function () {\r",
+									"    // Check the status code\r",
+									"    pm.response.to.have.status(500);\r",
+									"    // Check the response body\r",
+									"    pm.expect(jsonData.error).to.eql(\"Internal Server Error\");\r",
+									"    });\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "42907d49-b1ca-43b2-86d1-6b58f6a1f021",
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "ee07d89a-40d8-4ba3-844e-f10eb4f29302",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"Updated API Hackathon\",\r\n    \"creationTime\": \"2023-06-26T23:39:53.309+00:00\",\r\n    \"lastModTime\": \"2023-06-26T23:39:53.309+00:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/program/:name",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"program",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "Jun23-Postman Poineers-SDET-813",
+									"type": "string"
+								}
+							]
+						},
+						"description": "StartFragment\n\nRequest to update a program with missing fields.\n\nStatus Code:\n\n404: Error with message and boolean success detail – For Invalid ProgramId\n\n400 : Bad Request Missing field\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "delete program  for Invalid id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2964ae54-4aa5-40fd-8db2-eda06d2acf7d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "86f1812c-758a-4bda-b6b0-d0b2b48d9c2e",
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									"console.log(responseJson);\r",
+									"pm.test(\"Delete Request - Invalid Program ID\", function () {\r",
+									"    // Check the status code\r",
+									"    pm.response.to.have.status(404);\r",
+									"    // Check the response body\r",
+									"    pm.response.to.have.jsonBody({\r",
+									"        \"message\": \"no record found\",\r",
+									"        \"success\": false\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "805cfa25-9f45-4fc1-8d36-a2699b367c4e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseurl}}/deletebyprogid/{{InvalidprogramId}}",
+						"description": "StartFragment\n\nRequest to delete a program with a invalid id.\n\nStatus Code :  \n404: Error with Message (Eg: \"message\": \"no record found with programName\", \"success\": false)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "delete program for Invalid name",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "110c3f5c-d6d4-4048-86f2-31e3ccf8c4ce",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "33a09d74-d229-4ff5-964b-a7aef076b39e",
+								"exec": [
+									"pm.test(\"Delete Request - Invalid Program name\", function () {\r",
+									"    // Check the status code\r",
+									"    pm.response.to.have.status(404);\r",
+									"    // Check the response body\r",
+									"    pm.response.to.have.jsonBody({\r",
+									"        \"message\": \"no record found\",\r",
+									"        \"success\": false\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"const responseJson = pm.response.json();\r",
+									"console.log(responseJson);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "dddbb9fe-3f26-4d7a-a1b5-7bfe3559834a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseurl}}/deletebyprogname/{{Invalidprogramname}}",
+						"description": "Request to delete a program with a invalid name.\n\nStartFragment\n\nStatus Code :  \n404: Error with Message (Eg: \"message\": \"no record found with programName\",  \"success\": false)\n\n  \n\nEndFragment"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "07c4476a-795c-4547-accf-215863254ab1",
+			"description": "StartFragment\n\nThis Folder is used to test all the Negative scenarios of Program module.\n\nEndFragment",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d976b29c-0690-466a-90b8-4c6eb6f69ce2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fb7c9e4-6590-4ef9-8c9e-36492ad1089e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
