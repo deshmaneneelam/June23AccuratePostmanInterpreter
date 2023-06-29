@@ -858,8 +858,7 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}//users/users/{{userUpdateId}}",
-						"description": "StartFragment\n\nPUT Request to update user details with a invalid user id.\n\nStartFragment\n\nStatus Code :\n\n404 Not Found with message and boolean success details - for invalid User id\n\nEndFragment"
+						"url": "{{baseurl}}//users/users/{{userUpdateId}}"
 					},
 					"response": []
 				},
@@ -1066,7 +1065,7 @@
 	],
 	"variable": [
 		{
-			"id": "ee1cb4d4-993b-48f9-a927-f1029f6fe8ba",
+			"id": "ed2dcab5-bdd5-483c-88ef-8981fe8382f5",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
