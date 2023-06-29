@@ -306,7 +306,8 @@
 									"value": "1865"
 								}
 							]
-						}
+						},
+						"description": "http PUT request to update an assignment.\n\nStartFragment\n\nMandatory : \n\nAssignment Name should be unique , \n\nCreatedBy  - Should be Admin / Staff , Only active users can create assignment\n\nGrader Id  can be Admin / Staff / Student\n\nBatch ID,\n\nDue Date   in Assignments should be entered in YYYY-MM-DD HH:MI:SS\n\nAssignment Description\n\n  \n\nBaseUrl: [https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms](https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms)\n\nEndpoint : /assignments/{assignmentID}\n\n  \n\nRequest Body:\n\n{   \"assignmentDescription\": \"string\",\n\n  \"assignmentId\": 0,\n\n  \"assignmentName\": \"string\",\n\n  \"batchId\": 0,\n\n  \"comments\": \"string\",\n\n  \"createdBy\": \"string\",\n\n  \"dueDate\": \"2023-06-19T22:02:28.140Z\",\n\n  \"graderId\": \"string\",\n\n  \"pathAttachment1\": \"string\",\n\n  \"pathAttachment2\": \"string\",\n\n  \"pathAttachment3\": \"string\",\n\n  \"pathAttachment4\": \"string\",\n\n  \"pathAttachment5\": \"string\"   }\n\nResponse Body : \n\n{\n\n  \"assignmentDescription\": \"string\",\n\n  \"assignmentId\": 0,\n\n  \"assignmentName\": \"string\",\n\n  \"batchId\": 0,\n\n  \"comments\": \"string\",\n\n  \"createdBy\": \"string\",\n\n  \"dueDate\": \"2023-06-19T22:18:43.750Z\",\n\n  \"graderId\": \"string\",\n\n  \"pathAttachment1\": \"string\",\n\n  \"pathAttachment2\": \"string\",\n\n  \"pathAttachment3\": \"string\",\n\n  \"pathAttachment4\": \"string\",\n\n  \"pathAttachment5\": \"string\"\n\n}\n\nStatus Code : \n\nSuccess - 200 ok\n\n  \n\nEndFragment"
 					},
 					"response": []
 				},
@@ -585,7 +586,7 @@
 	],
 	"variable": [
 		{
-			"id": "cb2546bf-59f5-4523-916d-8456f22fee24",
+			"id": "2c73bbca-a68d-4c1b-834e-930b6879dc17",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
