@@ -376,7 +376,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseurl}}/assignment"
+						"url": "{{baseurl}}/assignment",
+						"description": "StartFragment\n\nRequest to get all submission details with a invalid endpoint.\n\nStatus Code : 404 not Found with message and boolean success details.\n\nEndFragment"
 					},
 					"response": []
 				},
@@ -587,7 +588,7 @@
 	],
 	"variable": [
 		{
-			"id": "1bf62307-4191-4eae-83dd-709ab99fd452",
+			"id": "02213f74-4ae7-4a95-80ed-a3f38f5ef145",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
