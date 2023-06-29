@@ -256,7 +256,6 @@
 									"\r",
 									"pm.test(\"properties exist\", function(){\r",
 									"    for(i=0;i<jsonData.length;i++){\r",
-									"        console.log('herer')\r",
 									"        pm.expect(jsonData[i]).to.have.property('submissionId');\r",
 									"        pm.expect(jsonData[i]).to.have.property('assignmentId');\r",
 									"        pm.expect(jsonData[i]).to.have.property('userId');\r",
@@ -992,29 +991,29 @@
 	],
 	"variable": [
 		{
-			"id": "5e5fa0cf-afdb-4a72-bf56-609d22484788",
+			"id": "4c7e37a1-3e70-4591-beb7-f86051864072",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "db815250-e99c-4395-a36e-fa3d11029ff1",
+			"id": "75c6c404-78e3-42cf-b3f2-ee9bd6bdc19f",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "9d362de4-49f7-4327-a93e-84bb07721872",
+			"id": "0527a216-d53e-466f-81f0-c9dad58ef8cc",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "5bf3d385-9b78-43e0-82ab-9ec4f6c5d09d",
+			"id": "36a1390c-294e-4184-b259-126d5c749802",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "4d8433b1-7a5d-4738-81ff-dcfa66877aca",
+			"id": "b94f7b62-f082-4537-90f2-a38b6fb00733",
 			"key": "assignmentId",
 			"value": ""
 		}
