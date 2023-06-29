@@ -22,7 +22,7 @@
 									"});\r",
 									"\r",
 									"const jsonData = pm.response.json();\r",
-									"\r",
+									"pm.collectionVariables.set(\"assignmentIdForCreate\",jsonData.assignmentId);\r",
 									"pm.test(\"Check if response is JSON\", function () {\r",
 									"    for(i=0;i<jsonData.length;i++){\r",
 									"        pm.expect(jsonData[i]).to.be.an('object');\r",
@@ -705,29 +705,29 @@
 	],
 	"variable": [
 		{
-			"id": "483fe62b-0006-4d86-9779-629c951400b3",
+			"id": "f1e6441b-73f0-49a6-9455-6270e693f522",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "cbad96a6-ee1b-4cae-94e9-b0a60761e564",
+			"id": "5febaa85-17a8-457f-bb21-e64201722171",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "2bf6557c-3b05-488d-b1bc-9cceaa110e91",
+			"id": "56cf0eaf-2ffb-407a-8e30-97eae88620bd",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "851e91b9-8c9e-4555-ba62-091f8eae6107",
+			"id": "ea696e36-a9a0-4692-bedc-c1d9a3a62853",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "4d1b473a-3c05-41aa-b49d-996f15916812",
+			"id": "8c7d4bf8-f192-466e-b166-d5afc89dd589",
 			"key": "assignmentId",
 			"value": ""
 		}
