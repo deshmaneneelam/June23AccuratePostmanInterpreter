@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Positive",
+			"name": "Positive Scenarios",
 			"item": [
 				{
 					"name": "Get all assginment",
@@ -593,7 +593,7 @@
 	],
 	"variable": [
 		{
-			"id": "740f66c7-5e7b-45e5-851b-6bc9a8d11763",
+			"id": "359bed81-8f32-4cb2-bc1c-31a1641c5b14",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
