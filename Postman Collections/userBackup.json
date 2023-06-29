@@ -236,6 +236,7 @@
 									"",
 									"pm.test(\"Verify phoneNumber is not empty\", function () {",
 									"  var responseData = pm.response.json();",
+									"  console.log(responseData);",
 									"  var phoneNumber = responseData.userPhoneNumber;",
 									"  pm.expect(phoneNumber).to.not.be.empty;",
 									"});",
@@ -1055,7 +1056,7 @@
 	],
 	"variable": [
 		{
-			"id": "0f98e1eb-4e41-47f3-86e3-6ece23521c8c",
+			"id": "f2807748-f510-47ff-bc36-95c38838998c",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
