@@ -1,0 +1,1073 @@
+{
+	"info": {
+		"_postman_id": "295945be-9e53-48d8-a891-dfcf764f4da1",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Positive Scenarios",
+			"item": [
+				{
+					"name": "get all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7c921d8e-8965-471c-9159-45247e868bae",
+								"exec": [
+									"// Get the response JSON",
+									"var responseJson = pm.response.json();",
+									"//responseJson[0].userId",
+									"// Extract the user IDs",
+									"var userIds = responseJson.map(function(obj) {",
+									"  return obj.user.userId;",
+									"});",
+									"",
+									"// Store the user IDs in an environment or global variable",
+									"pm.globals.set(\"userModuleUserIds\", userIds[0]);",
+									"",
+									"pm.test(\"Response code is 200 OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "81f2dccb-f8ee-4dc5-ac56-ac1bf4e43ace",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}//users/users/roles",
+						"description": "This request Get all the User Details\n\nBase URL \"https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms/\" is accessible the API endpoint  \n\"users/users\"  \nA \"GET\" request is sent\n\nThe response should be 200OK"
+					},
+					"response": []
+				},
+				{
+					"name": "get Users By Id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "258723db-a41c-4d15-8413-07b335770fec",
+								"exec": [
+									"//Retrieve the user IDs from the environment or global variable",
+									"var  userIds= pm.globals.get(\"userModuleUserIds\");",
+									"",
+									"// Use the user IDs as needed in the request URL or headers",
+									"pm.variables.set(\"userModuleUserId\", userIds);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "41d74c1c-04c5-4feb-a6ce-25ea1e507691",
+								"exec": [
+									"pm.test(\"Response code is 200 OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Verify response fields have values\", function () {",
+									"    var jsonData = pm.response.json();",
+									"",
+									"    pm.expect(jsonData.user.userId).to.not.be.null;",
+									"    pm.expect(jsonData.user.userFirstName).to.not.be.null;",
+									"    pm.expect(jsonData.user.userLastName).to.not.be.null;",
+									"    pm.expect(jsonData.user.userPhoneNumber).to.not.be.null;",
+									"    pm.expect(jsonData.user.role.roleId).to.not.be.null;",
+									"    pm.expect(jsonData.user.role.roleName).to.not.be.null;",
+									"    pm.expect(jsonData.user.role.roleDesc).to.not.be.null;",
+									"    pm.expect(jsonData.user.userRoleStatus).to.not.be.null;",
+									"",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "e200f6de-092e-44ff-ac45-a6cfbe802a25",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}//users/users/{{userModuleUserId}}",
+						"description": "This request gets all the User Details for a Valid given Id\n\nBase URL \"https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms/\" is accessible and the API endpoint  \n\"users/users/{userId}\n\n\"A \"GET\" request is sent\n\nThe response should be 200OK\n\nThe {userId} is retrieved from the GET All users request."
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users with roles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b1eb4ddb-70d8-48b5-8fab-f621e97855ad",
+								"exec": [
+									"pm.test(\"Response code is 200 OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "fe898ae0-de6a-49e9-9b84-e15e4e2226d3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}//users/users/roles",
+						"description": "This request gets all the User with Roles Details\n\nBase URL \"https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms/\" is accessible and the API endpoint  \n\"users/users/roles\"\n\nA \"GET\" request is sent\n\nThe response should be 200OK"
+					},
+					"response": []
+				},
+				{
+					"name": "Creating user with Data",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "332a8242-800f-4752-a1fc-19012ad971c3",
+								"exec": [
+									"// Generate a random phone number",
+									"generateRandomPhoneNumber = () => {",
+									"  var min = 1000000000; // Minimum value for the phone number",
+									"  var max = 9999999999; // Maximum value for the phone number",
+									"  return Math.floor(Math.random() * (max - min + 1)) + min;",
+									"}",
+									"// Generate a three-digit zero-padded number ",
+									"zeroPaddedNumber = (base) => (base).toString().padStart(3, '0')",
+									"",
+									"// Creates a JSON object with object key from \"columns\" item and value from",
+									"// variable values from \"pm.variables\" based on variable names in \"columns\"",
+									"objectFromVariables = (columns) => {",
+									"    var object = {}",
+									"    columns.forEach((col) => object[col]= pm.variables.replaceIn(`{{${col}}}`))",
+									"    return object;",
+									"}",
+									"",
+									"var paddedNum = zeroPaddedNumber(pm.info.iteration + 100);",
+									"",
+									"// Update the request body with dynamic values",
+									"var userColumns = [",
+									"    \"userComments\", \"userEduPg\",\"userEduUg\",\"userLastName\",\"userLinkedinUrl\",",
+									"    \"userLocation\",\"userMiddleName\", \"userTimeZone\",\"userVisaStatus\"",
+									"]",
+									"//var roleColumns = [ \"roleId\", \"userRoleStatus\" ]",
+									"",
+									"//var role = objectFromVariables(roleColumns)",
+									"var requestBody = objectFromVariables(userColumns)",
+									"var userIds = [];",
+									"",
+									"// Iterate to create multiple users",
+									"requestBody[\"userFirstName\"] = \"API16_\" + paddedNum;",
+									"requestBody[\"userLastName\"] = \"API16_lastname\" + paddedNum;",
+									"requestBody[\"userPhoneNumber\"] = generateRandomPhoneNumber();",
+									"requestBody[\"userLinkedinUrl\"] = \"API16_linkedinURL\" + paddedNum;",
+									"var userEduUgValues = [\"IT\", \"BSc\", \"BE\"];",
+									"var userEduPgValues = [\"MBA\", \"MSc\", \"MD\"];",
+									"var userLocationValues = [\"US\", \"India\", \"Canada\"];",
+									"var userRoleIdValues = [\"R01\", \"R02\", \"R03\"];",
+									"var userRoleStatusValues = [\"Admin\", \"Staff\", \"Student\"];",
+									"",
+									"",
+									"var randomIndexForOtherValues = Math.floor(Math.random() * userLocationValues.length);",
+									"var timezoneValues = [\"EST\", \"PST\", \"IST\", \"CST\"];",
+									"var randomIndexTimezone = Math.floor(Math.random() * timezoneValues.length);",
+									"var visaStatusValues = [\"Not-Specified\", \"NA\", \"GC-EAD\", \"H4-EAD\", \"H4\",\"H1B\", \"Canada-EAD\", \"Indian-Citizen\", \"US-Citizen\", \"Canada-Citizen\"];",
+									"var randomIndexVisaStatus = Math.floor(Math.random() * visaStatusValues.length);",
+									"",
+									"requestBody[\"userTimeZone\"] = timezoneValues[randomIndexTimezone];",
+									"requestBody[\"userVisaStatus\"] = visaStatusValues[randomIndexVisaStatus];",
+									"requestBody[\"userEduUg\"] = userEduUgValues[randomIndexForOtherValues];",
+									"requestBody[\"userEduPg\"] = userEduPgValues[randomIndexForOtherValues];",
+									"requestBody[\"userLocation\"] = userLocationValues[randomIndexForOtherValues];",
+									"var roleColumns = [];",
+									"var roleObject = {",
+									"  \"roleId\": userRoleIdValues[randomIndexForOtherValues],",
+									"  \"userRoleStatus\": userRoleStatusValues[randomIndexForOtherValues]",
+									"};",
+									"roleColumns.push(roleObject);",
+									"",
+									"requestBody[\"userRoleMaps\"] = roleColumns;",
+									"",
+									"pm.request.body.raw = JSON.stringify(requestBody);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "7b250a88-85ff-4d7b-ae2f-bdc199eeae4a",
+								"exec": [
+									"pm.test(\"Response status code is 201 created\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"var responseJson = pm.response.json();",
+									"var userIdResponse = responseJson.userId;",
+									"    // Set the global variable with the array of userIds",
+									"    var userId = userIdResponse.replace(/\"/g, '');",
+									"pm.globals.set(\"userIdsCreated\", userId);",
+									"",
+									"",
+									"",
+									"pm.test(\"Verify userId starts with U\", function () {",
+									"  var responseData = pm.response.json();",
+									"  var userId = responseData.user.userId;",
+									"  pm.expect(userId).to.startWith(\"U\");",
+									"});",
+									"",
+									"pm.test(\"Verify phoneNumber is not empty\", function () {",
+									"  var responseData = pm.response.json();",
+									"  var phoneNumber = responseData.user.userPhoneNumber;",
+									"  pm.expect(phoneNumber).to.not.be.empty;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "33a91eeb-e108-45e8-80c6-a3b6bc31e508",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}//users/users/roleStatus",
+						"description": "This request is to create a new user with valid feild values,\n\nValid - Create a new user with role and status update\n\nBase URL \"[https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms/\"](https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms/) is accessible and the API endpoint  \nusers/users/roleStatus  \nAnd the request body has valid Role Id as \"R01\"  \n\"R02\"  \n\"R03\"  \nAnd  \nMandatory Field values has to be provided - Phone Number, Role Id , Role Status , FirstName, Last Name , Time Zone , Visa Status  \nA \"POST\" request is sent\n\nThe Pre-request code generates values dynamically for all the fields and sends a post request and creates one User if the request is successful.\n\nA new user has to be created. Example attached,"
+					},
+					"response": [
+						{
+							"id": "3dd709ed-91b0-4eb2-8f9f-986ffd5f7e89",
+							"name": "Creating user with Valid Role and Status Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n      \"userComments\": \"Creating user with InValid Role and Status\",\n      \"userEduPg\": \"MBA\",\n      \"userEduUg\": \"IT\",\n      \"userFirstName\": \"team16 invalid role and status\",\n      \"userLastName\": \"ppostman hackathon\",\n      \"userLinkedinUrl\": \"http://linkedin/team0-16/\",\n      \"userLocation\": \"us\",\n      \"userMiddleName\": \"None\",\n      \"userPhoneNumber\": 1000001,\n      \"userRoleMaps\": [\n        {\n          \"roleId\": \"dnjk\",\n          \"userRoleStatus\": \"Admin\"\n        }\n      ],\n      \"userTimeZone\": \"EST\",\n      \"userVisaStatus\": \"US-Citizen\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{userBaseUrl}}//users/users/roleStatus"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jun 2023 00:03:35 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"timestamp\": \"2023-06-24T00:03:36.423+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"path\": \"/lms//users/users/roleStatus\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User details",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "56c5f71c-996c-4124-b93d-95a7d8e23e83",
+								"exec": [
+									"// Generate a random phone number",
+									"generateRandomPhoneNumber = () => {",
+									"  var min = 1000000000; // Minimum value for the phone number",
+									"  var max = 9999999999; // Maximum value for the phone number",
+									"  return Math.floor(Math.random() * (max - min + 1)) + min;",
+									"}",
+									"// Generate a three-digit zero-padded number ",
+									"zeroPaddedNumber = (base) => (base).toString().padStart(3, '0')",
+									"",
+									"",
+									"// Creates a JSON object with object key from \"columns\" item and value from",
+									"// variable values from \"pm.variables\" based on variable names in \"columns\"",
+									"objectFromVariables = (columns) => {",
+									"    var object = {}",
+									"    columns.forEach((col) => object[col]= pm.variables.replaceIn(`{{${col}}}`)",
+									"    );",
+									"",
+									"    return object;",
+									"}",
+									"",
+									"var paddedNumFirst = zeroPaddedNumber(pm.info.iteration + 1);",
+									"var paddedNumLast = zeroPaddedNumber(pm.info.iteration *2 );",
+									"",
+									"",
+									"// Update the request body with dynamic values",
+									"var userColumns = [",
+									"    \"userComments\", \"userEduPg\",\"userEduUg\",\"userLastName\",\"userLinkedinUrl\",",
+									"    \"userLocation\",\"userMiddleName\", \"userTimeZone\",\"userVisaStatus\",\"userPhoneNumber\"",
+									"]",
+									"var timezoneValues = [\"EST\", \"PST\", \"IST\", \"CST\"];",
+									"var randomIndexTimezone = Math.floor(Math.random() * timezoneValues.length);",
+									"var visaStatusValues = [\"Not-Specified\", \"NA\", \"GC-EAD\", \"H4-EAD\", \"H4\",\"H1B\", \"Canada-EAD\", \"Indian-Citizen\", \"US-Citizen\", \"Canada-Citizen\"];",
+									"var randomIndexVisaStatus = Math.floor(Math.random() * visaStatusValues.length);",
+									"",
+									"// Get the random timezone value",
+									"",
+									"var requestBody = objectFromVariables(userColumns)",
+									"requestBody[\"userFirstName\"] = \"API16_updated\" + paddedNumFirst;",
+									"requestBody[\"userLastName\"] = \"Team16_Updated\" + paddedNumLast;",
+									"requestBody[\"userPhoneNumber\"] = generateRandomPhoneNumber();",
+									"requestBody[\"userTimeZone\"] = timezoneValues[randomIndexTimezone];",
+									"requestBody[\"userVisaStatus\"] = visaStatusValues[randomIndexVisaStatus];",
+									"",
+									"",
+									"",
+									"pm.request.body.raw = JSON.stringify(requestBody);",
+									"// Retrieve the user IDs from the environment or global variable",
+									"var  userId= pm.globals.get(\"userIdsCreated\");",
+									"// Use the user IDs as needed in the request URL or headers",
+									"pm.variables.set(\"userUpdateId\", userId);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f54c0998-a4a8-437e-8af2-41fbe9cfa018",
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response status code is 400 Bad Request\", function () {",
+									"    pm.response.to.not.have.status(400);",
+									"});",
+									"pm.test(\"Verify userFirstName, userLastName, and userPhoneNumber\", function () {",
+									"  var responseData = pm.response.json();",
+									"  pm.expect(responseData.user.userFirstName).to.not.be.empty;",
+									"  pm.expect(responseData.user.userLastName).to.not.be.empty;",
+									"  pm.expect(responseData.user.userPhoneNumber).to.not.be.empty;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "815ca521-1d81-4c25-a903-78b4b65d59d5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}//users/users/{{userUpdateId}}",
+						"description": "Update user details with a given Valid userId\n\nBase Url and the API endpoint  \n/users/users/{userId}  \nAnd in the request body,  \nMandatory field values has to be provided, FirstName, Last Name , Time Zone , Visa Status\n\nThe request body is generated dynamically using random values."
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Role Status",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b869bcb9-0b75-4599-af74-5108d2cffb38",
+								"exec": [
+									"var  userId= pm.globals.get(\"userIdsCreated\");",
+									"// Use the user IDs as needed in the request URL or headers",
+									"pm.variables.set(\"userUpdateId\", userId);",
+									"",
+									"objectFromVariables = (columns) => {",
+									"    var object = {}",
+									"    columns.forEach((col) => object[col]= pm.variables.replaceIn(`{{${col}}}`)",
+									"    );",
+									"",
+									"    return object;",
+									"}",
+									"var userColumns=[\"roleId\",\"userRoleStatus\"];",
+									"var requestBody = objectFromVariables(userColumns)",
+									"var roleId = [\"R01\", \"R02\", \"R03\"];",
+									"var userRoleStatus = [\"Admin\", \"Student\", \"Staff\"];",
+									"var randomIndex = Math.floor(Math.random() * roleId.length);",
+									"requestBody[\"roleId\"] = roleId[randomIndex];",
+									"requestBody[\"userRoleStatus\"] = userRoleStatus[randomIndex];",
+									"",
+									"pm.request.body.raw = JSON.stringify(requestBody);",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "869f3efc-57d4-45d1-b152-f95abf43f362",
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Define the expected userId",
+									"var  userId= pm.globals.get(\"userIdsCreated\");",
+									"",
+									"pm.test(\"Verify returned userId matches the expected userId\", function () {",
+									"    var jsonData = pm.response.json();",
+									"",
+									"    pm.expect(jsonData).to.equal(\"UserStatus Updated for User: \"+userId);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "119e70e9-da4f-40c3-a7ac-e28c3aa70fe1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/users/users/roleStatus/{{userUpdateId}}",
+						"description": "Update user details with a given Valid user Role values\n\n  \nBase Url and the API endpoint  \n/users/users/roleStatus/{userId}  \nAnd in the request body,  \nProvide the valid roleId and roleStatus\n\nSend a \"PUT\" request\n\nThe response should be 200OK\n\nThe request body is generated dynamically using random values."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user data",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d132d672-5527-4fce-80d9-6bffd75b822e",
+								"exec": [
+									"var  userId= pm.globals.get(\"userIdsCreated\");",
+									"pm.variables.set(\"userDeleteId\", userId);",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "114aca55-7aa8-4feb-8d16-d6ddbc17446f",
+								"exec": [
+									"pm.test(\"Response status code is 200OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "f757d1bc-1ba9-47cb-b759-77d996e4a403",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": "{{baseurl}}/users/users/{{userDeleteId}}"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "8f9560a4-1f2c-489d-a1fe-4192bd1bb257"
+		},
+		{
+			"name": "Negative Scenarios",
+			"item": [
+				{
+					"name": "get Users By invalid Id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "258723db-a41c-4d15-8413-07b335770fec",
+								"exec": [
+									"",
+									"var userId = \"38479837\";",
+									"pm.variables.set(\"userModuleUserId\", userId);",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "613ae4a7-1854-4937-963a-a143e5795813",
+								"exec": [
+									"pm.test(\"Response code is not 200 OK\", function () {",
+									"    pm.response.to.not.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response code is 200 OK\", function () {",
+									"    pm.response.to.not.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "c6fdf76b-8f97-4a54-bc2f-63bd88fc0344",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}//users/users/{{userModuleUserId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Creating user with Data from File Invalid scenarios",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "332a8242-800f-4752-a1fc-19012ad971c3",
+								"exec": [
+									"// Generate a random phone number",
+									"generateRandomPhoneNumber = () => {",
+									"  var min = 1000000000; // Minimum value for the phone number",
+									"  var max = 9999999999; // Maximum value for the phone number",
+									"  return Math.floor(Math.random() * (max - min + 1)) + min;",
+									"}",
+									"// Generate a three-digit zero-padded number ",
+									"zeroPaddedNumber = (base) => (base).toString().padStart(3, '0')",
+									"",
+									"",
+									"// Creates a JSON object with object key from \"columns\" item and value from",
+									"// variable values from \"pm.variables\" based on variable names in \"columns\"",
+									"objectFromVariables = (columns) => {",
+									"    var object = {}",
+									"    columns.forEach((col) => object[col]= pm.variables.replaceIn(`{{${col}}}`))",
+									"    return object;",
+									"}",
+									"",
+									"var paddedNum = zeroPaddedNumber(pm.info.iteration + 1);",
+									"",
+									"// Update the request body with dynamic values",
+									"var userColumns = [",
+									"    \"userComments\", \"userEduPg\",\"userEduUg\",\"userLastName\",\"userLinkedinUrl\",",
+									"    \"userLocation\",\"userMiddleName\", \"userTimeZone\",\"userVisaStatus\"",
+									"]",
+									"var roleColumns = [ \"roleId\", \"userRoleStatus\" ]",
+									"",
+									"var role = objectFromVariables(roleColumns)",
+									"var requestBody = objectFromVariables(userColumns)",
+									"requestBody[\"userRoleMaps\"] = [role]",
+									"requestBody[\"userFirstName\"] = \"Team16_\" + paddedNum;",
+									"requestBody[\"userLastName\"] = \"Team16_lastname\" + paddedNum;",
+									"requestBody[\"userPhoneNumber\"] = generateRandomPhoneNumber();",
+									"",
+									"",
+									"",
+									"pm.request.body.raw = JSON.stringify(requestBody);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "7b250a88-85ff-4d7b-ae2f-bdc199eeae4a",
+								"exec": [
+									"pm.test(\"Response status code is 400 Bad Request\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Response status code is 404 Not Found \", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "dc964eb8-def7-4fde-bf17-a4d822444857",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}//users/users/roleStatus"
+					},
+					"response": [
+						{
+							"id": "cd174c84-f699-4fcd-9fc4-a30ad7c9d2e6",
+							"name": "Creating user with InValid Role and Status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n      \"userComments\": \"Creating user with InValid Role and Status\",\n      \"userEduPg\": \"MBA\",\n      \"userEduUg\": \"IT\",\n      \"userFirstName\": \"team16 invalid role and status\",\n      \"userLastName\": \"ppostman hackathon\",\n      \"userLinkedinUrl\": \"http://linkedin/team0-16/\",\n      \"userLocation\": \"us\",\n      \"userMiddleName\": \"None\",\n      \"userPhoneNumber\": 1000001,\n      \"userRoleMaps\": [\n        {\n          \"roleId\": \"dnjk\",\n          \"userRoleStatus\": \"Admin\"\n        }\n      ],\n      \"userTimeZone\": \"EST\",\n      \"userVisaStatus\": \"US-Citizen\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{userBaseUrl}}//users/users/roleStatus"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jun 2023 00:03:35 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"timestamp\": \"2023-06-24T00:03:36.423+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"path\": \"/lms//users/users/roleStatus\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User details Invalid",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "56c5f71c-996c-4124-b93d-95a7d8e23e83",
+								"exec": [
+									"// Generate a random phone number",
+									"generateRandomPhoneNumber = () => {",
+									"  var min = 1000000000; // Minimum value for the phone number",
+									"  var max = 9999999999; // Maximum value for the phone number",
+									"  return Math.floor(Math.random() * (max - min + 1)) + min;",
+									"}",
+									"// Generate a three-digit zero-padded number ",
+									"zeroPaddedNumber = (base) => (base).toString().padStart(3, '0')",
+									"",
+									"",
+									"// Creates a JSON object with object key from \"columns\" item and value from",
+									"// variable values from \"pm.variables\" based on variable names in \"columns\"",
+									"objectFromVariables = (columns) => {",
+									"    var object = {}",
+									"    columns.forEach((col) => object[col]= pm.variables.replaceIn(`{{${col}}}`)",
+									"    );",
+									"",
+									"    return object;",
+									"}",
+									"",
+									"var paddedNumFirst = zeroPaddedNumber(pm.info.iteration + 1);",
+									"var paddedNumLast = zeroPaddedNumber(pm.info.iteration *2 );",
+									"",
+									"",
+									"// Update the request body with dynamic values",
+									"var userColumns = [",
+									"    \"userComments\", \"userEduPg\",\"userEduUg\",\"userLastName\",\"userLinkedinUrl\",",
+									"    \"userLocation\",\"userMiddleName\", \"userTimeZone\",\"userVisaStatus\",\"userPhoneNumber\"",
+									"]",
+									"var timezoneValues = [\"invalid\", \"\", \"null\", \"time\", \"zone\"];",
+									"var randomIndexTimezone = Math.floor(Math.random() * timezoneValues.length);",
+									"var visaStatusValues = [\"random\",\"invalid\" ,\"US\", \"\",\"Canada\"];",
+									"var randomIndexVisaStatus = Math.floor(Math.random() * visaStatusValues.length);",
+									"",
+									"// Get the random timezone value",
+									"",
+									"var requestBody = objectFromVariables(userColumns)",
+									"requestBody[\"userFirstName\"] = \"Team16_\" + paddedNumFirst;",
+									"requestBody[\"userLastName\"] = \"Team16_Updated\" + paddedNumLast;",
+									"requestBody[\"userPhoneNumber\"] = generateRandomPhoneNumber();",
+									"requestBody[\"userTimeZone\"] = timezoneValues[randomIndexTimezone];",
+									"requestBody[\"userVisaStatus\"] = visaStatusValues[randomIndexVisaStatus];",
+									"",
+									"",
+									"// Retrieve the user IDs from the environment or global variable",
+									"var  userIds= pm.globals.get(\"userIdsCreated\");",
+									"",
+									"// Use the user IDs as needed in the request URL or headers",
+									"var userId = userIds[0];",
+									"pm.variables.set(\"userUpdateId\", userId);",
+									"",
+									"pm.request.body.raw = JSON.stringify(requestBody);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "ce934770-708f-46a6-bbe3-d1bf0d9dbdca",
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {",
+									"    pm.response.to.not.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response status code is 400 Bad Request\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response status code is 400 Bad Request\", function () {",
+									"    pm.response.to.not.have.status(400);",
+									"});",
+									"pm.test(\"Verify userFirstName, userLastName, and userPhoneNumber\", function () {",
+									"  var responseData = pm.response.json();",
+									"  pm.expect(responseData.user.userFirstName).to.not.be.empty;",
+									"  pm.expect(responseData.user.userLastName).to.not.be.empty;",
+									"  pm.expect(responseData.user.userPhoneNumber).to.not.be.empty;",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "a1da0133-84af-4545-b222-ba31e34f16c1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}//users/users/{{userUpdateId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User details Invalid userId",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "56c5f71c-996c-4124-b93d-95a7d8e23e83",
+								"exec": [
+									"// Generate a random phone number",
+									"generateRandomPhoneNumber = () => {",
+									"  var min = 1000000000; // Minimum value for the phone number",
+									"  var max = 9999999999; // Maximum value for the phone number",
+									"  return Math.floor(Math.random() * (max - min + 1)) + min;",
+									"}",
+									"// Generate a three-digit zero-padded number ",
+									"zeroPaddedNumber = (base) => (base).toString().padStart(3, '0')",
+									"",
+									"",
+									"// Creates a JSON object with object key from \"columns\" item and value from",
+									"// variable values from \"pm.variables\" based on variable names in \"columns\"",
+									"objectFromVariables = (columns) => {",
+									"    var object = {}",
+									"    columns.forEach((col) => object[col]= pm.variables.replaceIn(`{{${col}}}`)",
+									"    );",
+									"",
+									"    return object;",
+									"}",
+									"",
+									"var paddedNumFirst = zeroPaddedNumber(pm.info.iteration + 1);",
+									"var paddedNumLast = zeroPaddedNumber(pm.info.iteration *2 );",
+									"",
+									"",
+									"// Update the request body with dynamic values",
+									"var userColumns = [",
+									"    \"userComments\", \"userEduPg\",\"userEduUg\",\"userLastName\",\"userLinkedinUrl\",",
+									"    \"userLocation\",\"userMiddleName\", \"userTimeZone\",\"userVisaStatus\",\"userPhoneNumber\"",
+									"]",
+									"var timezoneValues = [\"invalid\", \"\", \"null\", \"time\", \"zone\"];",
+									"var randomIndexTimezone = Math.floor(Math.random() * timezoneValues.length);",
+									"var visaStatusValues = [\"random\",\"invalid\" ,\"US\", \"\",\"Canada\"];",
+									"var randomIndexVisaStatus = Math.floor(Math.random() * visaStatusValues.length);",
+									"",
+									"// Get the random timezone value",
+									"",
+									"var requestBody = objectFromVariables(userColumns)",
+									"requestBody[\"userFirstName\"] = \"Team16_\" + paddedNumFirst;",
+									"requestBody[\"userLastName\"] = \"Team16_Updated\" + paddedNumLast;",
+									"requestBody[\"userPhoneNumber\"] = generateRandomPhoneNumber();",
+									"requestBody[\"userTimeZone\"] = \"EST\";",
+									"requestBody[\"userVisaStatus\"] = \"US-Citizen\";",
+									"",
+									"",
+									"// Retrieve the user IDs from the environment or global variable",
+									"var  userIds= pm.globals.get(\"userIdsCreated\");",
+									"",
+									"// Use the user IDs as needed in the request URL or headers",
+									"var userId = \"38749837493\";",
+									"pm.variables.set(\"userUpdateId\", userId);",
+									"",
+									"pm.request.body.raw = JSON.stringify(requestBody);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "ce934770-708f-46a6-bbe3-d1bf0d9dbdca",
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {",
+									"    pm.response.to.not.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response status code is 400 Bad Request\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "00bab118-33b6-4cfb-9451-d8abce57b4fc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}//users/users/{{userUpdateId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Role Status Invaid roleId Status",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b869bcb9-0b75-4599-af74-5108d2cffb38",
+								"exec": [
+									"objectFromVariables = (columns) => {",
+									"    var object = {}",
+									"    columns.forEach((col) => object[col]= pm.variables.replaceIn(`{{${col}}}`)",
+									"    );",
+									"",
+									"    return object;",
+									"}",
+									"var userColumns=[\"roleId\",\"userRoleStatus\"];",
+									"var requestBody = objectFromVariables(userColumns)",
+									"var roleId = [\"R01\", \"R12\", \"\"];",
+									"var randomIndex = Math.floor(Math.random() * roleId.length);",
+									"var userRoleStatus = [\"\", \"sjdakjs\", \"Staff\"];",
+									"requestBody[\"roleId\"] = roleId[randomIndex];",
+									"requestBody[\"userRoleStatus\"] = userRoleStatus[randomIndex];",
+									"console.log(requestBody);",
+									"pm.request.body.raw = JSON.stringify(requestBody);",
+									"var  userId= pm.globals.get(\"userIdsCreated\");",
+									"// Use the user IDs as needed in the request URL or headers",
+									"pm.variables.set(\"userUpdateId\", userId);",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "00099599-65c7-4421-a4c3-aa87c1bfe523",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "{{baseurl}}/users/users/roleStatus/{{userUpdateId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user data Invalid UserId",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d132d672-5527-4fce-80d9-6bffd75b822e",
+								"exec": [
+									"",
+									"var userId =\"udjbndjnf\";",
+									"pm.variables.set(\"userDeleteId\", userId);",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "d1b8bdf9-1623-48dd-8da3-80ce3ec6445e",
+								"exec": [
+									"pm.test(\"Response status code is 400 Bad Request\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "b77b6a49-969d-4765-9bf1-16986a593004",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": "{{baseurl}}/users/users/{{userDeleteId}}"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "7282d51e-547b-4fd2-bed8-bf23e0f7ae40"
+		}
+	],
+	"variable": [
+		{
+			"id": "f992bfaf-cff6-4df6-a0b8-8d354155276c",
+			"key": "userBaseUrl",
+			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms",
+			"type": "string"
+		}
+	]
+}
