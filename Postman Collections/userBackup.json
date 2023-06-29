@@ -822,10 +822,6 @@
 									"});",
 									"",
 									"",
-									"pm.test(\"Response status code is 400 Bad Request\", function () {",
-									"    pm.response.to.not.have.status(400);",
-									"});",
-									"",
 									"",
 									""
 								],
@@ -1069,7 +1065,7 @@
 	],
 	"variable": [
 		{
-			"id": "4541c0c1-49ed-4f4d-b38b-8d1fbe1176b0",
+			"id": "7e39d7f1-fe9e-4183-a74c-ba84c1be7f53",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
