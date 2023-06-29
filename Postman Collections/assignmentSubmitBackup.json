@@ -574,14 +574,50 @@
 					"response": []
 				},
 				{
-					"name": "Check if ID is deleted",
-					"id": "22d696e0-7c7b-42f6-a233-08e6322b734b",
+					"name": "delete valid submission Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "165210f4-289a-483f-9d5b-68a0735e935c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8fb2a209-16ed-4f78-97c8-1ae62ae0d041",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/assignmentsubmission/:submission_id",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"assignmentsubmission",
+								":submission_id"
+							],
+							"variable": [
+								{
+									"id": "f6173537-ca7c-4cb4-a9f7-59993e56f1d3",
+									"key": "submission_id",
+									"value": "{{submissionId}}"
+								}
+							]
+						}
 					},
 					"response": []
 				}
@@ -956,29 +992,29 @@
 	],
 	"variable": [
 		{
-			"id": "02779c9b-475a-47be-8231-ef1c27fcdb69",
+			"id": "1e8915d4-5a9c-4ad6-8dab-1cfec9ccf602",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "20ded8e1-ea42-4981-84e6-58d0f3d1628e",
+			"id": "0fed4eb5-af2f-4b0b-8e3a-17fed0a306f4",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "e3864009-6435-4197-96c8-de2d51fc911b",
+			"id": "51bf0eca-6bdf-4267-8ba3-81a108e561ad",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "cd5db911-46fb-4249-825d-8327a97f8b50",
+			"id": "6656a9d6-f9fa-4e7c-b00a-5f25fa46e8fc",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "f289e85b-e923-4179-a420-8017ad8e3c40",
+			"id": "2abdbff5-c567-4dd7-9ab7-47c7be502e5f",
 			"key": "assignmentId",
 			"value": ""
 		}
