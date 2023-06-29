@@ -553,7 +553,8 @@
 					"response": []
 				}
 			],
-			"id": "6488f663-98dd-4a21-8ff7-fc2b65c11da7"
+			"id": "6488f663-98dd-4a21-8ff7-fc2b65c11da7",
+			"description": "StartFragment\n\n**This folder holds Negative test scenarios for Assignment Module.**\n\nEndFragment"
 		}
 	],
 	"event": [
@@ -580,7 +581,7 @@
 	],
 	"variable": [
 		{
-			"id": "3876fd97-7138-4b9a-9168-ee21e11acb53",
+			"id": "817e1809-8596-4502-96e1-4349d896479b",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
