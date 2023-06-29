@@ -559,7 +559,8 @@
 									"value": "000"
 								}
 							]
-						}
+						},
+						"description": "StartFragment\n\nStatus Code: \n\n404 Not Found with message and boolean success details\n\n  \n\nEndFragment"
 					},
 					"response": []
 				}
@@ -592,7 +593,7 @@
 	],
 	"variable": [
 		{
-			"id": "adc522e1-0229-4d22-9131-cf328714621c",
+			"id": "d2ea75e0-7673-444e-b859-e52a89cc1882",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
