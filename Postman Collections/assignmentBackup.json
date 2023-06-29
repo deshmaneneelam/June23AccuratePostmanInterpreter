@@ -593,13 +593,13 @@
 	],
 	"variable": [
 		{
-			"id": "e4d4a76f-4a88-455c-85e1-4507b9681135",
+			"id": "69b43c80-85eb-4d48-894c-2c5c83f686e8",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "48bbd836-7fe2-4a5a-94da-7275c4aab9e6",
+			"id": "b81c590d-3dac-43af-9755-ee527c0dd438",
 			"key": "assignmentIdModule",
 			"value": ""
 		}
