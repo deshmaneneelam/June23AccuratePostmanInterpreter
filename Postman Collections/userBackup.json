@@ -238,7 +238,7 @@
 									"  var responseData = pm.response.json();",
 									"  console.log(responseData.userPhoneNumber);",
 									"  var phoneNumber = responseData.userPhoneNumber;",
-									"  pm.expect(phoneNumber).to.not.be.empty;",
+									"  pm.expect(phoneNumber).to.not.equal(null);",
 									"});",
 									"",
 									"",
@@ -1056,7 +1056,7 @@
 	],
 	"variable": [
 		{
-			"id": "329095c4-c869-4f6f-9507-85ac5a744967",
+			"id": "e4a1788c-8aa5-4a32-bd25-e69353550a57",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
