@@ -228,6 +228,21 @@
 									"    var userId = userIdResponse.replace(/\"/g, '');",
 									"pm.globals.set(\"userIdsCreated\", userId);",
 									"",
+									"pm.test(\"Verify userId starts with U\", function () {",
+									"  var responseData = pm.response.json();",
+									"  var userId = responseData.user.userId;",
+									"  pm.expect(userId).to.startWith(\"U\");",
+									"});",
+									"",
+									"pm.test(\"Verify phoneNumber is not empty\", function () {",
+									"  var responseData = pm.response.json();",
+									"  var phoneNumber = responseData.user.userPhoneNumber;",
+									"  pm.expect(phoneNumber).to.not.be.empty;",
+									"});",
+									"",
+									"",
+									"",
+									"",
 									"",
 									"",
 									""
@@ -380,7 +395,12 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									""
+									"pm.test(\"Verify userFirstName, userLastName, and userPhoneNumber\", function () {",
+									"  var responseData = pm.response.json();",
+									"  pm.expect(responseData.user.userFirstName).to.not.be.empty;",
+									"  pm.expect(responseData.user.userLastName).to.not.be.empty;",
+									"  pm.expect(responseData.user.userPhoneNumber).to.not.be.empty;",
+									"});"
 								],
 								"type": "text/javascript"
 							}
@@ -805,12 +825,7 @@
 									"pm.test(\"Response status code is 400 Bad Request\", function () {",
 									"    pm.response.to.not.have.status(400);",
 									"});",
-									"pm.test(\"Verify userFirstName, userLastName, and userPhoneNumber\", function () {",
-									"  var responseData = pm.response.json();",
-									"  pm.expect(responseData.user.userFirstName).to.not.be.empty;",
-									"  pm.expect(responseData.user.userLastName).to.not.be.empty;",
-									"  pm.expect(responseData.user.userPhoneNumber).to.not.be.empty;",
-									"});",
+									"",
 									"",
 									""
 								],
@@ -1054,7 +1069,7 @@
 	],
 	"variable": [
 		{
-			"id": "a47d89b7-704a-43c5-bcdd-465c10debcaa",
+			"id": "4541c0c1-49ed-4f4d-b38b-8d1fbe1176b0",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
