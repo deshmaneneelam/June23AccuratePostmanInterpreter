@@ -229,13 +229,13 @@
 									"",
 									"pm.test(\"Verify userId starts with U\", function () {",
 									"  var jsonData = pm.response.json();",
-									"  var userId = jsonData[0].user.userId;",
+									"  var userId = jsonData.user.userId;",
 									"  pm.expect(userId).to.startWith(\"U\");",
 									"});",
 									"",
 									"pm.test(\"Verify phoneNumber is not empty\", function () {",
 									"  var responseData = pm.response.json();",
-									"  var phoneNumber = responseData[0].user.userPhoneNumber;",
+									"  var phoneNumber = responseData.user.userPhoneNumber;",
 									"  pm.expect(phoneNumber).to.not.be.empty;",
 									"});",
 									"",
@@ -1054,7 +1054,7 @@
 	],
 	"variable": [
 		{
-			"id": "b947132a-87ae-4c1c-b5ee-93f9fec6c8cc",
+			"id": "8345ac22-8ddb-4960-b7b5-461eba1e1725",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
