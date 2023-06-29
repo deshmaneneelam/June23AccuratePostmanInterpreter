@@ -365,7 +365,7 @@
 			"description": "StartFragment\n\n**This folder holds positive test scenarios for Assignment Module.**\n\nEndFragment"
 		},
 		{
-			"name": "Negative",
+			"name": "Negative Scenarios",
 			"item": [
 				{
 					"name": "Not getting assignments",
@@ -593,7 +593,7 @@
 	],
 	"variable": [
 		{
-			"id": "359bed81-8f32-4cb2-bc1c-31a1641c5b14",
+			"id": "34a72811-3155-4bb5-9050-369e668ae608",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
