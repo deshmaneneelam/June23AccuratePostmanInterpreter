@@ -1006,7 +1006,8 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"url": "{{baseurl}}/users/users/roleStatus/{{userUpdateId}}"
+						"url": "{{baseurl}}/users/users/roleStatus/{{userUpdateId}}",
+						"description": "Request to update user role status with a invalid user id.\n\nStartFragment\n\nStatus Code : \n\n404 Not Found with message and boolean success details - for invalid User id\n\n  \n\nEndFragment"
 					},
 					"response": []
 				},
@@ -1063,7 +1064,7 @@
 	],
 	"variable": [
 		{
-			"id": "ca970864-fefe-4449-aa5d-7c01c11de981",
+			"id": "5f263e0b-00fb-4492-8dc3-16b81bc453a9",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
