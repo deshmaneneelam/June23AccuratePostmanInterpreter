@@ -48,7 +48,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseurl}}/assignments"
+						"url": "{{baseurl}}/assignments",
+						"description": "StartFragment\n\nBaseUrl : [https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms](https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms)\n\nEndpoint : /assignments\n\nResponse Body : \n\n\\[\n\n  {\n\n    \"assignmentDescription\": \"string\",\n\n    \"assignmentId\": 0,\n\n    \"assignmentName\": \"string\",\n\n    \"batchId\": 0,\n\n    \"comments\": \"string\",\n\n    \"createdBy\": \"string\",\n\n    \"dueDate\": \"2023-06-19T21:36:42.434Z\",\n\n    \"graderId\": \"string\",\n\n    \"pathAttachment1\": \"string\",\n\n    \"pathAttachment2\": \"string\",\n\n    \"pathAttachment3\": \"string\",\n\n    \"pathAttachment4\": \"string\",\n\n    \"pathAttachment5\": \"string\"\n\n  } \\]\n\nStatus Code:   200 Ok\n\nEndFragment"
 					},
 					"response": []
 				},
@@ -581,7 +582,7 @@
 	],
 	"variable": [
 		{
-			"id": "817e1809-8596-4502-96e1-4349d896479b",
+			"id": "7554ab9a-8b10-42a5-b30e-c3e086c1f0c2",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
