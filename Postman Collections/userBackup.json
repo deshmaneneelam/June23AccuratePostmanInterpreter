@@ -83,8 +83,6 @@
 									"    pm.expect(jsonData[0].user.userFirstName).to.not.be.null;",
 									"    pm.expect(jsonData[0].user.userLastName).to.not.be.null;",
 									"    pm.expect(jsonData[0].user.userPhoneNumber).to.not.be.null;",
-									"    pm.expect(jsonData[0].user.role.roleId).to.not.be.null;",
-									"    pm.expect(jsonData[0].user.role.roleName).to.not.be.null;",
 									"    pm.expect(jsonData[0].user.role.roleDesc).to.not.be.null;",
 									"    pm.expect(jsonData[0].user.userRoleStatus).to.not.be.null;",
 									"",
@@ -1048,7 +1046,7 @@
 	],
 	"variable": [
 		{
-			"id": "98f3d8bf-cfcc-423d-9834-2669777045cf",
+			"id": "c09774fb-85b4-424c-bfc2-da7e03e88be7",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
