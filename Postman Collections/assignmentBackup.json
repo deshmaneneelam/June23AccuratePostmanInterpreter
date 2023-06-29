@@ -479,7 +479,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Assignment",
+					"name": "Update Assignment Invalid",
 					"event": [
 						{
 							"listen": "test",
@@ -593,13 +593,13 @@
 	],
 	"variable": [
 		{
-			"id": "9cd0c24b-89d5-4f30-87cb-563e7d835c0e",
+			"id": "48269110-498d-4890-8fb6-6d5ed81ce1a3",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "01e0c132-8342-460b-a907-f09a7258ce7c",
+			"id": "f2b99c93-b853-4bd3-94dd-8a532483ba5c",
 			"key": "assignmentIdModule",
 			"value": ""
 		}
