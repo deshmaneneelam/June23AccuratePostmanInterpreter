@@ -376,15 +376,7 @@
 									"pm.test(\"Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
-									"pm.test(\"Status test\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
 									"\r",
-									"var schema = {\r",
-									"    \"items\": {\r",
-									"        \"type\": \"boolean\"\r",
-									"    }\r",
-									"};\r",
 									"pm.test(\"Content-Type is present\", function () {\r",
 									"    pm.response.to.have.header(\"Content-Type\");\r",
 									"});\r",
@@ -987,29 +979,29 @@
 	],
 	"variable": [
 		{
-			"id": "e44914ba-3a30-42f0-b44c-5dd5034edda4",
+			"id": "1afdb542-d1cb-4166-b271-9d5efb588467",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "93b5ccf9-da89-4c26-91e3-8e7bf538c61e",
+			"id": "b11a57d2-8bce-4680-bf5b-f58971b2e155",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "b042a38e-df2f-433d-87cb-a82b9dd5a665",
+			"id": "bcd0020d-2939-4709-9afc-39cbf7859c06",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "3362855e-3c7f-43c6-8e4c-a2054f4a7d70",
+			"id": "0bd7a6c4-2fae-4026-87b3-f276dbda6a65",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "99ebdb7a-0aa4-453a-93ca-8bde20ae6ed2",
+			"id": "5cd0ab42-b9a4-48f7-9396-69dfc4671da4",
 			"key": "assignmentId",
 			"value": ""
 		}
