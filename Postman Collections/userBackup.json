@@ -31,6 +31,9 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
+									"// Get the response body",
+									"const responseBody = pm.response.json();",
+									"",
 									"// Iterate through each object in the collection",
 									"responseBody.forEach((object) => {",
 									"  const userId = object.userId;",
@@ -1078,7 +1081,7 @@
 	],
 	"variable": [
 		{
-			"id": "b268b453-18fb-4f82-9b15-bc517883c576",
+			"id": "533805ba-5314-413d-bb2a-2161a91de89f",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
