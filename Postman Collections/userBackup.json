@@ -32,7 +32,7 @@
 									"});",
 									"",
 									"// Get the response body",
-									"const responseBody = pm.response.json();",
+									"var responseBody = pm.response.json();",
 									"",
 									"// Iterate through each key-value pair in the response body",
 									"for (const key in responseBody) {",
@@ -1099,7 +1099,7 @@
 	],
 	"variable": [
 		{
-			"id": "7b6f6101-ea61-4385-bdc0-86c840c4de8c",
+			"id": "7ed4a3c1-a9b0-40c8-b04a-4272ffe3a049",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
