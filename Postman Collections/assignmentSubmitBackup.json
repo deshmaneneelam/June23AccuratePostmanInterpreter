@@ -205,7 +205,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"assignmentId\": {{assignmentId}},\r\n\"userId\": \"{{userId}}\",\r\n\"subDesc\": \"{{subDesc}}{{$randomInt}}\",\r\n\"subComments\": \"{{subComments}}\",\r\n\"subPathAttach1\": \"{{subPathAttach1}}\",\r\n\"subDateTime\": \"{{subDateTime}}\",\r\n\"gradedBy\": null,\r\n\"gradedDateTime\": null,\r\n\"grade\": -1\r\n}",
+							"raw": "{\r\n\"assignmentId\": {{assignmentIdForCreate}},\r\n\"userId\": \"{{userId}}\",\r\n\"subDesc\": \"{{subDesc}}{{$randomInt}}\",\r\n\"subComments\": \"{{subComments}}\",\r\n\"subPathAttach1\": \"{{subPathAttach1}}\",\r\n\"subDateTime\": \"{{subDateTime}}\",\r\n\"gradedBy\": null,\r\n\"gradedDateTime\": null,\r\n\"grade\": -1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -705,39 +705,39 @@
 	],
 	"variable": [
 		{
-			"id": "ef8df82e-f59e-4f91-bdd7-2e3754e35e1d",
+			"id": "79b0cc1c-438e-4bd6-a340-c65c1e269701",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "17be8173-cf64-424b-85e8-388b82bbfc74",
+			"id": "98805849-b845-4ded-8884-5ae848c73bc8",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "12b77cd4-fded-49f4-a913-14c63bba231e",
+			"id": "e1c78611-bd8d-4d76-bdab-444bb021e315",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "d17d5788-91f6-4f31-a22a-a90a830828ba",
+			"id": "ab34c3aa-15d5-4021-a166-d9aa3e0148b7",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "2e6d7e1e-d351-41ae-a89b-ea583274f8e3",
+			"id": "343afbb3-64e7-483a-9664-7f0237d38cb7",
 			"key": "assignmentId",
 			"value": ""
 		},
 		{
-			"id": "5d160674-7d2c-46cd-acf4-bb33f1b3a2f6",
+			"id": "1d278432-57a2-4b77-9da1-019d7056b342",
 			"key": "assignmentIdForCreate",
 			"value": ""
 		},
 		{
-			"id": "a8d89f21-4ea5-488b-b52c-a2930d77194e",
+			"id": "7c2b8949-6242-4f53-bf9e-54041866847b",
 			"key": "assignmentIdModule",
 			"value": ""
 		}
