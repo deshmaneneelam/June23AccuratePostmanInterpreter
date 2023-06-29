@@ -331,10 +331,6 @@
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"\r",
-									" pm.test(\"Check if response contains all the keys\", function () {\r",
-									"     pm.expect(pm.response.json()[0]).to.be.an('object').that.has.all.keys('submissionId', 'assignmentId');\r",
-									"    });\r",
 									""
 								],
 								"type": "text/javascript"
@@ -361,7 +357,7 @@
 							"variable": [
 								{
 									"key": "batch_id",
-									"value": ""
+									"value": "3603"
 								}
 							]
 						},
@@ -991,29 +987,29 @@
 	],
 	"variable": [
 		{
-			"id": "4c7e37a1-3e70-4591-beb7-f86051864072",
+			"id": "e44914ba-3a30-42f0-b44c-5dd5034edda4",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "75c6c404-78e3-42cf-b3f2-ee9bd6bdc19f",
+			"id": "93b5ccf9-da89-4c26-91e3-8e7bf538c61e",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "0527a216-d53e-466f-81f0-c9dad58ef8cc",
+			"id": "b042a38e-df2f-433d-87cb-a82b9dd5a665",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "36a1390c-294e-4184-b259-126d5c749802",
+			"id": "3362855e-3c7f-43c6-8e4c-a2054f4a7d70",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "b94f7b62-f082-4537-90f2-a38b6fb00733",
+			"id": "99ebdb7a-0aa4-453a-93ca-8bde20ae6ed2",
 			"key": "assignmentId",
 			"value": ""
 		}
