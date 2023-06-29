@@ -228,8 +228,8 @@
 									"pm.globals.set(\"userIdsCreated\", userId);",
 									"",
 									"pm.test(\"Verify userId starts with U\", function () {",
-									"  var responseData = pm.response.json();",
-									"  var userId = responseData.userId;",
+									"  var jsonData = pm.response.json();",
+									"  var userId = jsonData[0].user.userId;",
 									"  pm.expect(userId).to.startWith(\"U\");",
 									"});",
 									"",
@@ -1054,7 +1054,7 @@
 	],
 	"variable": [
 		{
-			"id": "2670abbe-5100-4647-961c-9890d811ab1f",
+			"id": "238dbba8-cbfc-4dbc-b568-775d7e32c4cc",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
