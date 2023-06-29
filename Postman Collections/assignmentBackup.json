@@ -369,6 +369,30 @@
 			"item": [
 				{
 					"name": "Not getting assignments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f6cc3c00-c41c-4259-a491-74c38399fc76",
+								"exec": [
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "433ca429-fb45-4a08-991a-06028880f69d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -680,18 +704,18 @@
 	],
 	"variable": [
 		{
-			"id": "347f111e-23c3-4d2f-948a-17479af74db5",
+			"id": "280641b8-7521-4084-acb0-259960abbbe4",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "379ef69e-d72f-4475-8731-220ae36b116a",
+			"id": "10250e36-1236-4678-b616-9e342bcd1f39",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "517e027c-2ff4-4e12-9f9c-eae6dbe61de9",
+			"id": "1fc11d5e-7700-4d7a-a216-831690983174",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
