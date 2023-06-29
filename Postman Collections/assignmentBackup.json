@@ -473,7 +473,8 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}/assignments"
+						"url": "{{baseurl}}/assignments",
+						"description": "StartFragment\n\nRequest to create an assignment with missing mandatory field or trying to create assignment that has been created already.\n\nStatus Code : \n\n400 Bad Request with message and boolean success details - for missing field\n\n  \n\nEndFragment"
 					},
 					"response": []
 				},
@@ -590,7 +591,7 @@
 	],
 	"variable": [
 		{
-			"id": "1ba297b6-9152-424d-b916-fdd1c7556cac",
+			"id": "1963068e-52d6-4956-a88c-8bc1d2879e41",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
