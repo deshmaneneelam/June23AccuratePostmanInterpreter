@@ -503,9 +503,24 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n        \"assignmentId\": 2386,\r\n        \"assignmentName\": \"{{teamNameForSubmit}}-1688006968041\",\r\n        \"assignmentDescription\": \"{{assignmentDescription}}\",\r\n        \"comments\": null,\r\n        \"dueDate\": \"2023-08-19T23:59:58.140+00:00\",\r\n        \"pathAttachment1\": ,\r\n        \"pathAttachment2\": \"path2\",\r\n        \"pathAttachment3\": \"path3\",\r\n        \"pathAttachment4\": \"path4\",\r\n        \"pathAttachment5\": \"path5\",\r\n        \"batchId\": 1,\r\n        \"createdBy\": \"U22\",\r\n        \"graderId\": \"U22\"\r\n    },"
+							"raw": " {\r\n        \"assignmentId\": 2386,\r\n        \"assignmentName\": \"{{teamNameForSubmit}}-1688006968041\",\r\n        \"assignmentDescription\": \"{{assignmentDescription}}\",\r\n        \"comments\": null,\r\n        \"dueDate\": \"2023-08-19T23:59:58.140+00:00\",\r\n        \"pathAttachment1\": \"path1\",\r\n        \"pathAttachment2\": \"path2\",\r\n        \"pathAttachment3\": \"path3\",\r\n        \"pathAttachment4\": \"path4\",\r\n        \"pathAttachment5\": \"path5\",\r\n        \"batchId\": 1,\r\n        \"createdBy\": \"U22\",\r\n        \"graderId\": \"U22\"\r\n    },"
 						},
-						"url": "{{baseurl}}/assignments",
+						"url": {
+							"raw": "{{baseurl}}/assignments/:assignmentId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"assignments",
+								":assignmentId"
+							],
+							"variable": [
+								{
+									"key": "assignmentId",
+									"value": "2386"
+								}
+							]
+						},
 						"description": "StartFragment\n\nPUT request to update an assignment with invalid assignment ID, or trying to update an assignment with missing fields.\n\nStatus Code : \n\n400 Bad Request with message and boolean success details - for missing field\n\n404 Not Found - for invalid assignment ID.\n\n  \n\nEndFragment"
 					},
 					"response": []
@@ -582,13 +597,13 @@
 	],
 	"variable": [
 		{
-			"id": "35e9e1e9-e073-4608-8384-67a7e35a69db",
+			"id": "4e892ab1-e4f7-4973-99b4-3ff8ca247b9e",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "eebaf433-20e5-4200-a47f-320f3c617262",
+			"id": "06340cfe-62d6-4989-9933-d155c9703ddd",
 			"key": "assignmentIdModule",
 			"value": ""
 		}
