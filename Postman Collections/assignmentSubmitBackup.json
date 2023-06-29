@@ -574,15 +574,15 @@
 					"response": []
 				},
 				{
-					"name": "Check id ID is deleted",
+					"name": "Check id submission ID is deleted",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "165210f4-289a-483f-9d5b-68a0735e935c",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Content-Type is present\", function () {\r",
@@ -992,29 +992,29 @@
 	],
 	"variable": [
 		{
-			"id": "d48d5cf3-b803-4613-83da-cdaa7882a63b",
+			"id": "a5f5dc50-b28b-4c23-9aac-a02ae4e4e13d",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "328e6344-efdb-468e-8767-50b1363ef7db",
+			"id": "71258fd2-146c-4878-be03-82dab16ac7c0",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "47b99634-b592-42cb-bb42-c55a653b8f97",
+			"id": "f81a8914-13db-4d1a-b173-5f1c171ce095",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "cb759253-ad96-4de5-8447-afebc80e0aad",
+			"id": "13c211bb-5bb9-4451-a632-f47232b7cc89",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "3b0de100-577b-4800-8f08-452e8ecbb98f",
+			"id": "338a03b8-4a56-4452-ab2b-6b91bfd9cfd1",
 			"key": "assignmentId",
 			"value": ""
 		}
