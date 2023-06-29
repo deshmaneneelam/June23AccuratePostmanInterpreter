@@ -648,18 +648,18 @@
 	],
 	"variable": [
 		{
-			"id": "8df74dda-fd70-4511-9916-edbb8baa50b9",
+			"id": "bbb3dd33-9990-427c-a32f-a803139aa8ec",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "e057a09b-ff5d-492a-b538-793e5d7644ba",
+			"id": "9215be74-4925-4429-aad8-4015b06e85ca",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "8bdb3800-7193-4c43-8551-61256cc9a8fc",
+			"id": "4aa1ea6e-3131-4dd2-b9cb-cdf1a0aaa2ac",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
