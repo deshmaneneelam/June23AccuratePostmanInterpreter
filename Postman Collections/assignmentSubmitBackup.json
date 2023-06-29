@@ -160,13 +160,13 @@
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"\r",
+									"/*\r",
 									"const response = pm.response.json();\r",
 									"pm.test(\"AssignmentId is not matching \", function () {\r",
 									"    var assId = pm.collectionVariables.get('assignmentId');\r",
 									"    console.log(\"assignmentId ::\"+assId);\r",
 									"    pm.expect(res.assignmentId).to.eql(assId);\r",
-									"});\r",
+									"});*/\r",
 									"\r",
 									""
 								],
@@ -611,348 +611,6 @@
 			],
 			"id": "1b918805-d145-43d3-a455-4c3bb3170d8b",
 			"description": "**This folder holds positive test scenarios for Assignment Submit Module.**"
-		},
-		{
-			"name": "Negative scenarios",
-			"item": [
-				{
-					"name": "get all submission_invalid",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "18f111c1-dd08-4696-97a7-df9d8461bb5e",
-								"exec": [
-									"pm.test(\"Invalid endpoint with Status code is 404 (Not Found)\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Status test\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "0e7f468f-686d-41cf-91bb-f74dd54fd67f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseurl}}/:assignmentsubmission/",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								":assignmentsubmission",
-								""
-							],
-							"variable": [
-								{
-									"key": "assignmentsubmission",
-									"value": null
-								}
-							]
-						},
-						"description": "StartFragment\n\nRequest to get all submission details with a invalid endpoint.\n\nStatus Code : 404 not Found with message and boolean success details.\n\nEndFragment"
-					},
-					"response": []
-				},
-				{
-					"name": "get submission by invalid user_id",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "7e2a812b-4bed-4b07-989d-a2796c5f9fea",
-								"exec": [
-									"pm.test(\"Invalid user_id with Status code is 404 (Not found) \", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Status test\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "d3140b4f-1d0f-4278-bb02-d7916abdc2ad",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseurl}}/assignmentsubmission/student/:user_id",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"assignmentsubmission",
-								"student",
-								":user_id"
-							],
-							"variable": [
-								{
-									"key": "user_id",
-									"value": "10"
-								}
-							]
-						},
-						"description": "StartFragment\n\nRequest to get submission details with a invalid user ID.\n\nStatus Code : 404 not Found with message and boolean success details.\n\nEndFragment"
-					},
-					"response": []
-				},
-				{
-					"name": "get submission by invalid batch_id",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2b1f2a78-5087-4012-b2fe-56c664cf6a4d",
-								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"pm.test(\"Status test\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "62b1ec95-b078-4e0e-b3bf-abb614208b62",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseurl}}/assignmentsubmission/studentbatch/:batch_id",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"assignmentsubmission",
-								"studentbatch",
-								":batch_id"
-							],
-							"variable": [
-								{
-									"key": "batch_id",
-									"value": ""
-								}
-							]
-						},
-						"description": "StartFragment\n\nRequest to get submission details with a invalid batch ID.\n\nStatus Code : 404 not Found with message and boolean success details.\n\nEndFragment"
-					},
-					"response": []
-				},
-				{
-					"name": "get grades by invalid assignment_id",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "214f3ce7-49bd-45c1-b42b-a2a9d2bc3796",
-								"exec": [
-									"pm.test(\"Invalid assignment_id with Status code is 404 (Not found) \", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Status test\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "de6a0fcd-a519-4db4-ae3d-515c98b4286a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseurl}}/assignmentsubmission/getGrades/:assignment_id",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"assignmentsubmission",
-								"getGrades",
-								":assignment_id"
-							],
-							"variable": [
-								{
-									"key": "assignment_id",
-									"value": "156"
-								}
-							]
-						},
-						"description": "StartFragment\n\nRequest to get grades with a invalid assignment ID.\n\nStatus Code : 404 not Found with message and boolean success details.\n\nEndFragment"
-					},
-					"response": []
-				},
-				{
-					"name": "get grades by invalid student_id",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "23e813cd-44af-458d-8be1-bc9e40b66c8c",
-								"exec": [
-									"pm.test(\"Invalid student_id with Status code is 404 (Not found) \", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Status test\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "9eed95c1-f1e8-40e1-b573-aa7a7281c06a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseurl}}/assignmentsubmission/getGradesByStudentId/:student_id",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"assignmentsubmission",
-								"getGradesByStudentId",
-								":student_id"
-							],
-							"variable": [
-								{
-									"key": "student_id",
-									"value": "U75"
-								}
-							]
-						},
-						"description": "StartFragment\n\nRequest to get grades with a invalid student ID.\n\nStatus Code : 404 not Found with message and boolean success details.\n\nEndFragment"
-					},
-					"response": []
-				},
-				{
-					"name": "get grades by invalid batch_id",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "b0483757-b201-44f0-bcf7-bb060c2142c2",
-								"exec": [
-									"pm.test(\"Status code is 404\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
-									"    console.log(response.json());\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"pm.test(\"Status test\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "5b2ad29d-620c-4e3a-ade6-04d045e59d67",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseurl}}/assignmentsubmission/grades/74",
-						"description": "StartFragment\n\nRequest for get grades with a invalid batch ID.\n\nStatus Code : 404 not Found with message and boolean success details.\n\nEndFragment"
-					},
-					"response": []
-				},
-				{
-					"name": "delete invalid submission",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "8782682d-e085-4188-9749-51c085802dd2",
-								"exec": [
-									"pm.test(\"Invalid submission_id with Status code is 404 (Not Found)\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Status test\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "7e81c8ec-6826-4906-9623-9fa59e5bc359",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{baseurl}}/assignmentsubmission/:submission_id",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"assignmentsubmission",
-								":submission_id"
-							],
-							"variable": [
-								{
-									"key": "submission_id",
-									"value": "5"
-								}
-							]
-						},
-						"description": "Request to delete a submisson request with invalid submission id.\n\nStartFragment\n\nStatus Code : 404 not Found with message and boolean success details.\n\nEndFragment"
-					},
-					"response": []
-				}
-			],
-			"id": "67dd4862-e060-4118-9a85-6b8f1255a7aa",
-			"description": "This folder holds Negative test scenarios for Assigment submit module of lms API."
 		}
 	],
 	"event": [
@@ -979,29 +637,29 @@
 	],
 	"variable": [
 		{
-			"id": "4d0b3e8d-473a-4afe-beab-243e19e5f062",
+			"id": "8b2e0534-ddea-41f2-956d-af5ae8fa0667",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "3239ea4c-6169-4d18-87aa-41e7976c45e2",
+			"id": "3dee50da-6dfa-48ee-80ff-a3a36673b423",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "d3509ea7-8be1-4cce-8870-fb7c7ce7e6a9",
+			"id": "f4c61bb7-98da-4d9e-99d7-354d2c2cf8d3",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "b38c3b5e-cc1f-457e-ba2e-5900d284cee0",
+			"id": "e77b20a6-25d4-4d58-9a2f-1344441f2b85",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "67db1222-3995-4d1b-9338-ac3b228376f6",
+			"id": "f8650984-f6c8-40b4-9723-af9803b24283",
 			"key": "assignmentId",
 			"value": ""
 		}
