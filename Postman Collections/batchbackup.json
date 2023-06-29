@@ -576,7 +576,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseurl}}/batch/{{batchName}}"
+						"url": "{{baseurl}}/batch/{{batchName}}",
+						"description": "StartFragment\n\nRequest to get a batch with a invalid name.\n\nStartFragment\n\nStatus Code :  \n404: Error with Message (Eg: \"message\": \"no record found with programName\", \"success\": false)\n\nEndFragment"
 					},
 					"response": []
 				},
