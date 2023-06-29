@@ -668,7 +668,8 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseurl}}/batch/{{batchId}}"
+						"url": "{{baseurl}}/batch/{{batchId}}",
+						"description": "StartFragment\n\nRequest to delete a program with a invalid name.\n\nStartFragment\n\nStatus Code :  \n404: Error with Message (Eg: \"message\": \"no record found with programName\", \"success\": false)\n\nEndFragment"
 					},
 					"response": []
 				}
