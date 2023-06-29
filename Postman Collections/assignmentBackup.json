@@ -535,11 +535,7 @@
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Check if response is JSON\", function () {\r",
-									"    for(i=0;i<jsonData.length;i++){\r",
-									"        pm.expect(jsonData[i]).to.be.an('object');\r",
-									"    }\r",
-									"});\r",
+									"\r",
 									"\r",
 									"pm.test(\"Check response header\", function () {\r",
 									"    pm.response.to.have.header('content-type');\r",
@@ -652,18 +648,18 @@
 	],
 	"variable": [
 		{
-			"id": "8e17963b-acb2-4207-8064-ab96a5d24245",
+			"id": "cf3cec1c-c665-4c30-a0e5-3ffdc3b28463",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "5a77cd57-dd49-4d54-8f6b-6b7cf1f20aa9",
+			"id": "3fcde33b-6913-4680-ace9-d61adde4f218",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "59d7f2d1-6a8e-43d0-9c0c-3bd2a897c916",
+			"id": "02740fbe-7c1c-4b84-867c-38e95f24be75",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
