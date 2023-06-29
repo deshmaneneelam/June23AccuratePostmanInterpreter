@@ -1,0 +1,679 @@
+{
+	"info": {
+		"_postman_id": "00b009d8-c827-4827-bab4-71bc221a2cd1",
+		"name": "Batch",
+		"description": "StartFragment\n\n# Batch Module:Write scenarios using 'get, put, pull and delete' request.\n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Positive scenarios",
+			"item": [
+				{
+					"name": "To get ProgramID",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6c9611d2-bb64-4b8d-9f83-07039095bad3",
+								"exec": [
+									"var pname = \"Jun23-API-SDET-\" + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"\r",
+									"var pdes = \"cucumber Hackathon\" + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"\r",
+									"pm.environment.set(\"programName\", pname);\r",
+									"\r",
+									"pm.environment.set(\"programDescription\",pdes)\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "2ec54d3c-3b11-465c-9183-44fae0d44ab3",
+								"exec": [
+									"var response = pm.response.json();\r",
+									"\r",
+									"pm.globals.set(\"programId\",response.programId);\r",
+									"\r",
+									"pm.globals.set(\"programName\",response.programName);\r",
+									"pm.globals.set(\"programpayload\",JSON.stringify(response));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "5c57abdf-0170-43f9-bcaa-3c6f3e7d71ad",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBatch",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a579d6df-aaf8-42d6-a383-afd5536cea8e",
+								"exec": [
+									"var bname = \"Jun23-API-hackathon-SDET-\"+pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"batchName\", bname);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "d971a9e3-e45e-428e-b723-e26e688e6244",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"var response = pm.response.json();\r",
+									"\r",
+									"pm.globals.set(\"batchId\",response.batchId);\r",
+									"\r",
+									"pm.globals.set(\"batchName\",response.batchName);\r",
+									"pm.globals.set(\"batchpayload\",JSON.stringify(response));\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"var schema = {\r",
+									" \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"programId\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"programName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"programDescription\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"programStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"creationTime\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"lastModTime\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"programId\",\r",
+									"    \"programName\",\r",
+									"    \"programDescription\",\r",
+									"    \"programStatus\",\r",
+									"    \"creationTime\",\r",
+									"    \"lastModTime\"\r",
+									"  ]\r",
+									"}\r",
+									"\r",
+									"pm.test(\"JSON Schema Validation\",()=>{\r",
+									"    pm.expect(tv4.validate(jsonData,schema)).to.be.true;\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "e5393abe-48f4-40e7-b43d-496dcfa1c99b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"batchDescription\": \"SDET training at Numpy\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": 3,\r\n  \"batchStatus\": \"Active\",\r\n  \"programId\": \"{{programId}}\"\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/batches",
+						"description": "StartFragment\n\nMandatory :  Batch Name, programID , Batch status , No of Classes\n\nAutogenerated : BatchID\n\n  \n\nBaseUrl: https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint : /batches\n\n  \n\nRequest Body :\n\n{\n\n  \"batchDescription\": \"string\",\n\n  \"batchName\": \"string\",\n\n  \"batchNoOfClasses\": 0,\n\n  \"batchStatus\": \"string\",\n\n  \"programId\": 0\n\n }\n\nResponse Body:\n\n{\n\n  \"batchDescription\": \"string\",\n\n  \"batchId\": 0,\n\n  \"batchName\": \"string\",\n\n  \"batchNoOfClasses\": 0,\n\n  \"batchStatus\": \"string\",\n\n  \"programId\": 0,\n\n  \"programName\": \"string\"\n\n}\n\n  \n\nStatus Code:\n\n201 : Created\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "get all btaches",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ef8ad5d2-3bf1-42bd-bd9e-cd84b3801b52",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const jsonData = pm.response.json();\r",
+									"console.log(jsonData.length);\r",
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									"pm.test(\"properties have valid data type\", function(){\r",
+									"    const res = pm.response.json();\r",
+									"    for(i=0;i<res.length;i++){\r",
+									"        pm.expect(res[i].batchId).to.be.a('number');\r",
+									"        pm.expect(res[i].batchName).to.be.a('string');\r",
+									"        pm.expect(res[i].programId).not.eql('number');\r",
+									"        \r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "2f2d7313-8c6c-4817-80ff-4926c60fa4b0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/batches",
+						"description": "StartFragment\n\n  \n\nBaseUrl: https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint : /batches\n\n  \n\nResponse Body :\n\n\\[  {\n\n    \"batchDescription\": \"string\",\n\n    \"batchId\": 0,\n\n    \"batchName\": \"string\",\n\n    \"batchNoOfClasses\": 0,\n\n    \"batchStatus\": \"string\",\n\n    \"programId\": 0,\n\n    \"programName\": \"string\"   }   \\]\n\n  \n\nStatus code : 200 ok\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Get batch by batch name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "70e68bdd-1c21-4969-a53d-89b56104cf85",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"response must be valid and have a body\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "47cccae3-9f59-48b9-85f1-9a7de1b963f7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/batches/batchName/{{batchName}}",
+						"description": "StartFragment\n\nBaseUrl: https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint: /batches/batchName/{batchName}\n\n  \n\nResponse Body :\n\n\\[  {\n\n    \"batchDescription\": \"string\",\n\n    \"batchId\": 0,\n\n    \"batchName\": \"string\",\n\n    \"batchNoOfClasses\": 0,\n\n    \"batchStatus\": \"string\",\n\n    \"programId\": 0,\n\n    \"programName\": \"string\"\n\n  }\n\n\\]\n\n  \n\nStatus code : \n\n200 ok\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Get batch by BatchID",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3f085e7e-cc74-45f7-94f5-09055c7a7f2a",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "6212fb11-8c86-4a24-9fba-66c3de1da306",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"values of Json fields\" ,()=>\r",
+									"{\r",
+									"  var jsonData=pm.response.json();\r",
+									"  pm.expect(jsonData.batchId).to.eql(pm.globals.get(\"batchId\"));\r",
+									"  pm.expect(jsonData.batchName).to.eql(pm.globals.get(\"batchName\"));\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "950f6d3c-27cb-4a59-a6ca-c19494b2fd34",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/batches/batchId/{{batchId}}",
+						"description": "StartFragment\n\nBaseUrl: https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint : /batches/batchId/{batchId}\n\n  \n\nResponse Body :\n\n  {\n\n    \"batchDescription\": \"string\",\n\n    \"batchId\": 0,\n\n    \"batchName\": \"string\",\n\n    \"batchNoOfClasses\": 0,\n\n    \"batchStatus\": \"string\",\n\n    \"programId\": 0,\n\n    \"programName\": \"string\"\n\n  }\n\n  \n\nStatus code : \n\n200 ok\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Get batch by programId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7be1cf5-2271-41e9-baeb-16fd5b765964",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "f650a845-a3a0-46cb-a0b0-bd1867c39083",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/batches/program/{{programId}}",
+						"description": "StartFragment\n\nBaseUrl: https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint :/batches/program/{programId}\n\n  \n\nResponse Body :\n\n\\[  {\n\n    \"batchDescription\": \"string\",\n\n    \"batchId\": 0,\n\n    \"batchName\": \"string\",\n\n    \"batchNoOfClasses\": 0,\n\n    \"batchStatus\": \"string\",\n\n    \"programId\": 0,\n\n    \"programName\": \"string\"\n\n  }\n\n\\]\n\n  \n\nStatus code : \n\n200 ok\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBatch",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "0aa42098-b71d-48d9-b736-9d750b8757c9",
+								"exec": [
+									"var putBatchpayload=JSON.parse(pm.globals.get(\"batchpayload\"));\r",
+									"var bname = \"Jun23-API-SDET-\"+pm.variables.replaceIn('{{$randomInt}}');\r",
+									"putBatchpayload.batchName=bname;"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "96dd7a91-8d4e-4d54-a4b5-e4eb593fb670",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData=pm.response.json();\r",
+									" console.log(jsonData);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "f1faf8c3-22c4-4621-b488-e3666e09c031",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{{batchpayload}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/batches/{{batchId}}",
+						"description": "StartFragment\n\nMandatory : Batch Status, Number of Classes , Batch Name  , programID\n\n  \n\nBaseUrl: https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint:/batches/{batchId}\n\n  \n\nRequest Body:\n\n{\n\n  \"batchDescription\": \"string\",\n\n  \"batchId\": 0,\n\n  \"batchName\": \"string\",\n\n  \"batchNoOfClasses\": 0,\n\n  \"batchStatus\": \"string\",\n\n  \"programId\": 0,\n\n  \"programName\": \"string\"\n\n}\n\n  \n\nResponse Body:\n\n{\n\n  \"batchDescription\": \"string\",\n\n  \"batchId\": 0,\n\n  \"batchName\": \"string\",\n\n  \"batchNoOfClasses\": 0,\n\n  \"batchStatus\": \"string\",\n\n  \"programId\": 0,\n\n  \"programName\": \"string\"\n\n}\n\n  \n\nStatus Code:\n\n200 : Ok\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete batch",
+					"_postman_id": "8224c778-85b7-458f-8b0f-4e76714b3dfa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseurl}}/batches/{{batchId}}",
+						"description": "StartFragment\n\nBaseUrl: [https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com](https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com)/ lms\n\nEndpoint: /batches/{id}\n\n  \n\nStatus code : \n\n200 ok\n\n  \n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Get batch after deleting by BatchID",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3f085e7e-cc74-45f7-94f5-09055c7a7f2a",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "6212fb11-8c86-4a24-9fba-66c3de1da306",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "a839e858-5e9f-4478-b6e6-1564da95d22f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/batches/batchId/{{batchId}}"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "a683bc31-6717-4538-8018-29519e5d31ef",
+			"description": "StartFragment\n\n**This folder holds positive test scenarios for Batch Module.**\n\nEndFragment"
+		},
+		{
+			"name": "Negative Scenarios",
+			"item": [
+				{
+					"name": "Invalid create batch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fef7aae3-23f1-4335-9a1a-e038c073311d",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "3a39e562-b968-4e0d-8287-d524082bd0b2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"batchDescription\": \"SDET training at Numpy\",\r\n  \"batchName\": \"{{NegbatchName}}\",\r\n  \"batchNoOfClasses\": {{$randomInt}},\r\n  \"batchStatus\": \" \",\r\n  \"programId\": \"{{NegprogramId}}\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid get all Batches",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7853ca25-6b42-4d0a-8f48-b6acfe056717",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "b934e34a-db4f-48aa-a60e-07af76c99028",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/batch"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Get batch by batchID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad4e53f8-418f-45ba-b917-55dedaa92479",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "607ab97e-1e1a-4935-afa3-27a3a1e6c742",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/batch/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid get batch by name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05e47154-313e-4187-b3d9-7dd1e7f4cf06",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "430200f7-5bd7-4b10-97db-223f20327619",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/batch/{{batchName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid get batch by programID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fbe2035f-ec13-4066-bd57-211235e012a9",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "4c0539e0-8dd9-40f3-997d-8050f3626f4a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/batch/{{programId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid update batch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2c107cdb-e98f-4f3c-9f18-cbe673301070",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "605366f6-056b-4c0e-8b47-e1560c099c1f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"Invalid request\",\r\n  \"batchId\": 3216,\r\n  \"batchName\": {{$randomLastName}},\r\n  \"batchNoOfClasses\": {{$randomInt}},\r\n  \"batchStatus\": ,\r\n  \"programId\": ,\r\n  \"programName\": \"string\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/batches/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid delete batch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e647698a-e790-4009-851b-0e901b6c6ec2",
+								"exec": [
+									"\r",
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "107ff05c-0362-47b8-bb8e-603a44a78675",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseurl}}/batch/{{batchId}}"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "6559542e-496b-4801-9353-b896fcbe992a",
+			"description": "StartFragment\n\n**This folder holds Negative test scenarios for Batch Module.**\n\nEndFragment"
+		}
+	]
+}
