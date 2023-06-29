@@ -451,7 +451,8 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}/batches/batchId/{{batchId}}"
+						"url": "{{baseurl}}/batches/batchId/{{batchId}}",
+						"description": "StartFragment\n\nBaseUrl: https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint : /batches/batchId/{batchId}\n\n  \n\nResponse Body :\n\n  {\n\n    \"batchDescription\": \"string\",\n\n    \"batchId\": 0,\n\n    \"batchName\": \"string\",\n\n    \"batchNoOfClasses\": 0,\n\n    \"batchStatus\": \"string\",\n\n    \"programId\": 0,\n\n    \"programName\": \"string\"\n\n  }\n\n  \n\nStatus code : \n\n200 ok\n\n404 – Error with message (Eg: \"message\": \"Batch not found with Id : {batchId}\",  \"success\": false)\n\n  \n\nEndFragment"
 					},
 					"response": []
 				}
