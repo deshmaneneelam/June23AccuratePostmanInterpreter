@@ -49,7 +49,7 @@
 							}
 						}
 					],
-					"_postman_id": "4a735a7c-fc0f-4d37-9e9e-6724bde3ce09",
+					"id": "4a735a7c-fc0f-4d37-9e9e-6724bde3ce09",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -58,10 +58,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": "{{baseurl}}/allPrograms",
 						"description": "StartFragment\n\nBaseURL : https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms\n\nEndpoint :/allPrograms\n\n  \n\nResponses:\n\n\\[ {\n\n  \"programId\": 0,\n\n  \"programName\": “String\",\n\n  \"programDescription\": \"String\",\n\n  \"programStatus\": \"String\",\n\n  \"creationTime\": TimeStamp,\n\n  \"lastModTime\": TimeStamp\n\n}   \\]\n\n  \n\nStatusCode:   200 : ok\n\n  \n\nEndFragment"
@@ -128,7 +125,7 @@
 							}
 						}
 					],
-					"_postman_id": "22e68e76-bcba-45ba-a3ba-4ee694b00ad1",
+					"id": "22e68e76-bcba-45ba-a3ba-4ee694b00ad1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -185,7 +182,7 @@
 							}
 						}
 					],
-					"_postman_id": "b27737bc-43bb-4b36-a565-5018a17381cf",
+					"id": "b27737bc-43bb-4b36-a565-5018a17381cf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -239,7 +236,7 @@
 							}
 						}
 					],
-					"_postman_id": "5847beee-d365-4f64-9842-83b06e3e1ee2",
+					"id": "5847beee-d365-4f64-9842-83b06e3e1ee2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -284,7 +281,7 @@
 							}
 						}
 					],
-					"_postman_id": "1d35960f-ee44-4730-9c00-e9e7ce26ce94",
+					"id": "1d35960f-ee44-4730-9c00-e9e7ce26ce94",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -329,7 +326,7 @@
 							}
 						}
 					],
-					"_postman_id": "0701b895-51d6-4482-9190-b81f6881e79f",
+					"id": "0701b895-51d6-4482-9190-b81f6881e79f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -370,7 +367,7 @@
 							}
 						}
 					],
-					"_postman_id": "4548b094-22c7-48ae-9b6c-8a58149dc0e3",
+					"id": "4548b094-22c7-48ae-9b6c-8a58149dc0e3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -458,7 +455,7 @@
 							}
 						}
 					],
-					"_postman_id": "ad3ccc65-cac8-48f0-961e-59c116dcc3cb",
+					"id": "ad3ccc65-cac8-48f0-961e-59c116dcc3cb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -512,7 +509,7 @@
 							}
 						}
 					],
-					"_postman_id": "0a6e3b2f-547a-4345-a12a-cb718c994e21",
+					"id": "0a6e3b2f-547a-4345-a12a-cb718c994e21",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -525,7 +522,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "889e6796-4c89-4879-8457-5163d3fa87c7",
+			"id": "889e6796-4c89-4879-8457-5163d3fa87c7",
 			"description": "This Folder is used to test all the positive scenarios of Program module.",
 			"event": [
 				{
@@ -580,7 +577,7 @@
 							}
 						}
 					],
-					"_postman_id": "9d0171f4-c2c7-43ac-a649-66fe5eee553f",
+					"id": "9d0171f4-c2c7-43ac-a649-66fe5eee553f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -599,8 +596,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "99999",
-									"type": "string"
+									"value": "99999"
 								}
 							]
 						},
@@ -648,7 +644,7 @@
 							}
 						}
 					],
-					"_postman_id": "57ba4383-b029-4ba6-8fce-d41282731e30",
+					"id": "57ba4383-b029-4ba6-8fce-d41282731e30",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -657,7 +653,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"API Hackathon\",\r\n  \"programName\": \"Jun23-API Testers-DA-S554\",\r\n  \"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n  \"programDescription\": \"API Hackathon test with github\",\r\n  \"programName\": \"Jun23-API Testers-DA-S554\",\r\n  \"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -719,7 +715,7 @@
 							}
 						}
 					],
-					"_postman_id": "dc7a4c38-0a6b-4e98-9b63-9b62f98775d4",
+					"id": "dc7a4c38-0a6b-4e98-9b63-9b62f98775d4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -788,7 +784,7 @@
 							}
 						}
 					],
-					"_postman_id": "2fed5245-348e-4c3f-b785-9bf70651fe87",
+					"id": "2fed5245-348e-4c3f-b785-9bf70651fe87",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -849,7 +845,7 @@
 							}
 						}
 					],
-					"_postman_id": "d07a5b2b-f8d5-49b8-be60-00f9da045c8a",
+					"id": "d07a5b2b-f8d5-49b8-be60-00f9da045c8a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -911,7 +907,7 @@
 							}
 						}
 					],
-					"_postman_id": "42e7b8d6-3f50-4733-bb4a-cf2134ab6b1a",
+					"id": "42e7b8d6-3f50-4733-bb4a-cf2134ab6b1a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -966,7 +962,7 @@
 							}
 						}
 					],
-					"_postman_id": "ee07d89a-40d8-4ba3-844e-f10eb4f29302",
+					"id": "ee07d89a-40d8-4ba3-844e-f10eb4f29302",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -994,8 +990,7 @@
 							"variable": [
 								{
 									"key": "name",
-									"value": "Jun23-Postman Poineers-SDET-813",
-									"type": "string"
+									"value": "Jun23-Postman Poineers-SDET-813"
 								}
 							]
 						},
@@ -1043,7 +1038,7 @@
 							}
 						}
 					],
-					"_postman_id": "805cfa25-9f45-4fc1-8d36-a2699b367c4e",
+					"id": "805cfa25-9f45-4fc1-8d36-a2699b367c4e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1090,7 +1085,7 @@
 							}
 						}
 					],
-					"_postman_id": "dddbb9fe-3f26-4d7a-a1b5-7bfe3559834a",
+					"id": "dddbb9fe-3f26-4d7a-a1b5-7bfe3559834a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1103,7 +1098,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "07c4476a-795c-4547-accf-215863254ab1",
+			"id": "07c4476a-795c-4547-accf-215863254ab1",
 			"description": "StartFragment\n\nThis Folder is used to test all the Negative scenarios of Program module.\n\nEndFragment",
 			"event": [
 				{
