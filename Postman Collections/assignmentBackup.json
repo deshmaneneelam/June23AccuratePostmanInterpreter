@@ -501,10 +501,6 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": " "
-						},
 						"url": {
 							"raw": "{{baseurl}}/assignments/:{{InvalidAssignmentId}}",
 							"host": [
@@ -597,18 +593,18 @@
 	],
 	"variable": [
 		{
-			"id": "ec1df28d-7be0-406c-ae5a-d30fce610cda",
+			"id": "f39c8f04-068d-49be-bb52-2d203a07b589",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "0e8503fb-e591-4e4d-8c67-c8a6c1dde716",
+			"id": "dc7f2464-1693-4ec7-a26b-2d20b5705d7e",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "42c86adb-2850-4294-97fd-05abcf4e900d",
+			"id": "b462a811-1e1c-49ca-a14e-4f4edaf3fe34",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
