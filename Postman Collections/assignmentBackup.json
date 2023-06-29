@@ -436,7 +436,8 @@
 									"value": "22"
 								}
 							]
-						}
+						},
+						"description": "StartFragment\n\nRequest to get a batch with invalid batch Id\n\nStatus Code:   404 Not Found with message and boolean success details \n\nNote : If batch Id is invalid - Batch id not found, If batch id present and  no assignment  - then Assignment not found\n\n  \n\nEndFragment"
 					},
 					"response": []
 				},
@@ -589,7 +590,7 @@
 	],
 	"variable": [
 		{
-			"id": "9f5d59f1-a5be-48f8-a854-0f9a805c096a",
+			"id": "1ba297b6-9152-424d-b916-fdd1c7556cac",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
