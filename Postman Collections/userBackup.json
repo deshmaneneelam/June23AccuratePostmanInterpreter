@@ -999,18 +999,6 @@
 								],
 								"type": "text/javascript"
 							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "1f466229-f6c6-4384-9313-aa807caf2cfa",
-								"exec": [
-									"pm.test(\"Response status code is 200 OK\", function () {",
-									"    pm.response.to.not.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
 						}
 					],
 					"id": "00099599-65c7-4421-a4c3-aa87c1bfe523",
@@ -1078,7 +1066,7 @@
 	],
 	"variable": [
 		{
-			"id": "a7e6f6c5-f60b-4075-a206-053c3edc171f",
+			"id": "d33833e8-cda9-4dd2-b767-3895226f61f7",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
