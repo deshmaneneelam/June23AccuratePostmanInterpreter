@@ -503,24 +503,9 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n        \"assignmentId\": 2386,\r\n        \"assignmentName\": \"{{teamNameForSubmit}}-1688006968041\",\r\n        \"comments\": null,\r\n        \"dueDate\": \"2023-08-19T23:59:58.140+00:00\",\r\n        \"pathAttachment1\": \"path1\",\r\n        \"pathAttachment2\": \"path2\",\r\n        \"pathAttachment3\": \"path3\",\r\n        \"pathAttachment4\": \"path4\",\r\n        \"pathAttachment5\": \"path5\",\r\n        \"batchId\": 1,\r\n        \"createdBy\": \"U22\",\r\n        \"graderId\": \"U22\"\r\n    },"
+							"raw": " {\r\n        \"assignmentId\": 2386,\r\n        \"assignmentName\": \"{{teamNameForSubmit}}-1688006968041\",\r\n        \"assignmentDescription\": \"{{assignmentDescription}}\",\r\n        \"comments\": null,\r\n        \"dueDate\": \"2023-08-19T23:59:58.140+00:00\",\r\n        \"pathAttachment1\": ,\r\n        \"pathAttachment2\": \"path2\",\r\n        \"pathAttachment3\": \"path3\",\r\n        \"pathAttachment4\": \"path4\",\r\n        \"pathAttachment5\": \"path5\",\r\n        \"batchId\": 1,\r\n        \"createdBy\": \"U22\",\r\n        \"graderId\": \"U22\"\r\n    },"
 						},
-						"url": {
-							"raw": "{{baseurl}}/assignments/:{{InvalidAssignmentId}}",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"assignments",
-								":{{InvalidAssignmentId}}"
-							],
-							"variable": [
-								{
-									"key": "{{InvalidAssignmentId}}",
-									"value": null
-								}
-							]
-						},
+						"url": "{{baseurl}}/assignments",
 						"description": "StartFragment\n\nPUT request to update an assignment with invalid assignment ID, or trying to update an assignment with missing fields.\n\nStatus Code : \n\n400 Bad Request with message and boolean success details - for missing field\n\n404 Not Found - for invalid assignment ID.\n\n  \n\nEndFragment"
 					},
 					"response": []
@@ -597,13 +582,13 @@
 	],
 	"variable": [
 		{
-			"id": "10e0363e-81ae-477c-958b-83b3ae413af8",
+			"id": "35e9e1e9-e073-4608-8384-67a7e35a69db",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "76926882-95c5-4794-901c-5462412d3c18",
+			"id": "eebaf433-20e5-4200-a47f-320f3c617262",
 			"key": "assignmentIdModule",
 			"value": ""
 		}
