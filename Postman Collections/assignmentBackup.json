@@ -40,7 +40,7 @@
 							}
 						}
 					],
-					"_postman_id": "b4a29c17-ea3b-405f-9bbb-8f9708bf8c13",
+					"id": "b4a29c17-ea3b-405f-9bbb-8f9708bf8c13",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -85,7 +85,7 @@
 							}
 						}
 					],
-					"_postman_id": "7d868b84-9ece-4902-9a33-25d213b14e3e",
+					"id": "7d868b84-9ece-4902-9a33-25d213b14e3e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -93,14 +93,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseurl}}/assignments/:assignmentId/",
+							"raw": "{{baseurl}}/assignments/:assignmentId",
 							"host": [
 								"{{baseurl}}"
 							],
 							"path": [
 								"assignments",
-								":assignmentId",
-								""
+								":assignmentId"
 							],
 							"query": [
 								{
@@ -113,8 +112,7 @@
 							"variable": [
 								{
 									"key": "assignmentId",
-									"value": "1865",
-									"type": "string"
+									"value": "1865"
 								}
 							]
 						}
@@ -138,7 +136,7 @@
 							}
 						}
 					],
-					"_postman_id": "61fad786-8432-49db-9a2d-485e3aa9e592",
+					"id": "61fad786-8432-49db-9a2d-485e3aa9e592",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -159,8 +157,7 @@
 							"variable": [
 								{
 									"key": "batchId",
-									"value": "4340",
-									"type": "string"
+									"value": "4340"
 								}
 							]
 						}
@@ -214,7 +211,7 @@
 							}
 						}
 					],
-					"_postman_id": "f7e088db-a6bd-48a6-b538-65e27db5c52a",
+					"id": "f7e088db-a6bd-48a6-b538-65e27db5c52a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -273,7 +270,7 @@
 							}
 						}
 					],
-					"_postman_id": "ec364abf-39b2-4538-b930-ab879eda34ba",
+					"id": "ec364abf-39b2-4538-b930-ab879eda34ba",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -301,8 +298,7 @@
 							"variable": [
 								{
 									"key": "assignmentId",
-									"value": "1865",
-									"type": "string"
+									"value": "1865"
 								}
 							]
 						}
@@ -346,7 +342,7 @@
 							}
 						}
 					],
-					"_postman_id": "fe95ff6b-2a43-465a-8f00-bcd5c0414c6d",
+					"id": "fe95ff6b-2a43-465a-8f00-bcd5c0414c6d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -358,14 +354,14 @@
 					"response": []
 				}
 			],
-			"_postman_id": "ad5c7d9c-020f-449a-ba5c-ab5f71c80ac2"
+			"id": "ad5c7d9c-020f-449a-ba5c-ab5f71c80ac2"
 		},
 		{
 			"name": "Negative",
 			"item": [
 				{
 					"name": "Not getting assignments",
-					"_postman_id": "433ca429-fb45-4a08-991a-06028880f69d",
+					"id": "433ca429-fb45-4a08-991a-06028880f69d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -378,7 +374,7 @@
 				},
 				{
 					"name": "Getting assignment with Invalid id",
-					"_postman_id": "386bcdc5-b8e3-457b-9ecb-1d04a6a695e6",
+					"id": "386bcdc5-b8e3-457b-9ecb-1d04a6a695e6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -397,8 +393,7 @@
 							"variable": [
 								{
 									"key": "assignmentId",
-									"value": "567",
-									"type": "string"
+									"value": "567"
 								}
 							]
 						}
@@ -407,7 +402,7 @@
 				},
 				{
 					"name": "Getting batch with invalid Id",
-					"_postman_id": "dbcb8a94-e095-41f9-b253-64fb365f0e5e",
+					"id": "dbcb8a94-e095-41f9-b253-64fb365f0e5e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -428,8 +423,7 @@
 							"variable": [
 								{
 									"key": "batchId",
-									"value": "22",
-									"type": "string"
+									"value": "22"
 								}
 							]
 						}
@@ -452,7 +446,7 @@
 							}
 						}
 					],
-					"_postman_id": "4c64bfa9-b46b-4054-b8c2-98b1a4ccfa9a",
+					"id": "4c64bfa9-b46b-4054-b8c2-98b1a4ccfa9a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -488,7 +482,7 @@
 							}
 						}
 					],
-					"_postman_id": "1c2a4334-8bb7-4503-a57c-948e09144805",
+					"id": "1c2a4334-8bb7-4503-a57c-948e09144805",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -507,8 +501,7 @@
 							"variable": [
 								{
 									"key": "{{InvalidAssignmentId}}",
-									"value": null,
-									"type": "any"
+									"value": null
 								}
 							]
 						}
@@ -531,7 +524,7 @@
 							}
 						}
 					],
-					"_postman_id": "eb4f3cfa-270b-47c0-8747-1806f72b6427",
+					"id": "eb4f3cfa-270b-47c0-8747-1806f72b6427",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -550,8 +543,7 @@
 							"variable": [
 								{
 									"key": "{{InvalidAssignmentId}}",
-									"value": "000",
-									"type": "string"
+									"value": "000"
 								}
 							]
 						}
@@ -559,7 +551,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "6488f663-98dd-4a21-8ff7-fc2b65c11da7"
+			"id": "6488f663-98dd-4a21-8ff7-fc2b65c11da7"
 		}
 	],
 	"event": [
@@ -586,7 +578,7 @@
 	],
 	"variable": [
 		{
-			"id": "8aa49824-4455-48fe-92ab-42c0e9432e83",
+			"id": "b2654c5a-c73c-4220-a6d8-c8be2f661f04",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
