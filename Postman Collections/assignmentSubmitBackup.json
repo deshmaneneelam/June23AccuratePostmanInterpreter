@@ -705,39 +705,39 @@
 	],
 	"variable": [
 		{
-			"id": "2c3c9ca7-8c42-405e-8ea9-2b35febc1329",
+			"id": "81638205-14a8-4a48-a7c1-2a8a231e5535",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "6914a805-ba04-45f7-b5ed-8d67c38b47e3",
+			"id": "917f69e8-c9aa-4eb7-b9b9-011b37c38051",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "a6c1f064-7054-4aea-afa7-d5b26cd7cbed",
+			"id": "4c41f1b7-0fae-4d3c-ac69-253e7c9c41ff",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "dc7812f5-25c0-48c2-96a6-c955c7b54e04",
+			"id": "a048cb51-8f9b-4472-9373-4a52ffca63f4",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "0fafe9e5-b339-42db-96ed-ab1d6653a745",
+			"id": "e614b626-cd70-4935-8a3c-570f4d4811aa",
 			"key": "assignmentId",
 			"value": ""
 		},
 		{
-			"id": "4959a57f-153b-40f3-b218-73c9d566a5a5",
+			"id": "6a45ba5b-7500-40a0-98dc-175e162143e0",
 			"key": "assignmentIdForCreate",
 			"value": ""
 		},
 		{
-			"id": "01ca06b4-f5c8-4a52-9716-9cac59b9fa27",
+			"id": "8d079818-9bac-4140-b36e-96764d331dca",
 			"key": "assignmentIdModule",
 			"value": ""
 		}
