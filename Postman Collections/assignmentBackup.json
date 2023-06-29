@@ -194,7 +194,7 @@
 									"\r",
 									"pm.test(\"properties have valid data type\", function(){\r",
 									"    const res = pm.response.json();\r",
-									"   pm.expect(res.assignmentId).to.be.a('number');\r",
+									"   pm.expect(res[i].assignmentId).to.be.a('number');\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -593,13 +593,13 @@
 	],
 	"variable": [
 		{
-			"id": "d5ce649f-8848-4f10-96e1-b15b30f6e7e8",
+			"id": "da881cc7-496f-4dea-98f5-5fb1ac42c3a7",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "57ebf3a8-b5ce-4b7f-9bfb-925bd47ea537",
+			"id": "bcf99d9f-41a6-4f7e-be6c-4cb5b3f45078",
 			"key": "assignmentIdModule",
 			"value": ""
 		}
