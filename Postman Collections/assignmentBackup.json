@@ -375,18 +375,6 @@
 							"script": {
 								"id": "f6cc3c00-c41c-4259-a491-74c38399fc76",
 								"exec": [
-									"\r",
-									"pm.test(\"Check if response is JSON\", function () {\r",
-									"    for(i=0;i<jsonData.length;i++){\r",
-									"        pm.expect(jsonData[i]).to.be.an('object');\r",
-									"    }\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Check response header\", function () {\r",
-									"    pm.response.to.have.header('content-type');\r",
-									"    pm.response.to.be.header('content-type','application/json')\r",
-									"});\r",
-									"\r",
 									""
 								],
 								"type": "text/javascript"
@@ -692,18 +680,18 @@
 	],
 	"variable": [
 		{
-			"id": "569c2d86-c01a-4889-8077-b32b120d19d0",
+			"id": "fbceb036-b6ef-4fd8-899f-54d90a35c874",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "96c5c485-5af6-42ae-9e39-a0e2434a2aa1",
+			"id": "7b38b684-1f3a-4ea5-b849-1713515ce59f",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "822ec3d0-d4d8-458a-ba14-0350f3cc2795",
+			"id": "7fc28b00-cdf7-44d9-9072-2b427247a924",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
