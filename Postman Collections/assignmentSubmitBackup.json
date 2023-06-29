@@ -574,7 +574,7 @@
 					"response": []
 				},
 				{
-					"name": "delete valid submission Copy",
+					"name": "Check id ID is deleted",
 					"event": [
 						{
 							"listen": "test",
@@ -992,29 +992,29 @@
 	],
 	"variable": [
 		{
-			"id": "1e8915d4-5a9c-4ad6-8dab-1cfec9ccf602",
+			"id": "d48d5cf3-b803-4613-83da-cdaa7882a63b",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "0fed4eb5-af2f-4b0b-8e3a-17fed0a306f4",
+			"id": "328e6344-efdb-468e-8767-50b1363ef7db",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "51bf0eca-6bdf-4267-8ba3-81a108e561ad",
+			"id": "47b99634-b592-42cb-bb42-c55a653b8f97",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "6656a9d6-f9fa-4e7c-b00a-5f25fa46e8fc",
+			"id": "cb759253-ad96-4de5-8447-afebc80e0aad",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "2abdbff5-c567-4dd7-9ab7-47c7be502e5f",
+			"id": "3b0de100-577b-4800-8f08-452e8ecbb98f",
 			"key": "assignmentId",
 			"value": ""
 		}
