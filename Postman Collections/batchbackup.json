@@ -495,7 +495,8 @@
 								}
 							}
 						},
-						"url": "{{baseurl}}/batches"
+						"url": "{{baseurl}}/batches",
+						"description": "StartFragment\n\nStartFragment\n\nRequest to create an existing batch.\n\nStatus Code :\n\n400 : Error - For Program already exists\n\nEndFragment"
 					},
 					"response": []
 				},
