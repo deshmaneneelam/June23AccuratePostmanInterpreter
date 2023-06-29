@@ -420,7 +420,7 @@
 							"variable": [
 								{
 									"key": "assignment_id",
-									"value": "1661"
+									"value": "{{assignmentId}}"
 								}
 							]
 						},
@@ -944,29 +944,29 @@
 	],
 	"variable": [
 		{
-			"id": "f7d14e57-1da6-429e-9117-aceade927ccf",
+			"id": "576a8b8d-6d46-45b9-b8e2-a07aba78937f",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "e7f761d2-b0ac-4c01-ad82-6965ddd0a7db",
+			"id": "3fda04be-522d-4a6d-92fc-d167f17aa566",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "5f742205-6928-4660-9422-2dd1ae237c48",
+			"id": "9b5da7c4-30b2-4b41-abaf-1634eb7e1e8d",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "45b4b67f-c67d-4244-bf7d-ae7fc241ac88",
+			"id": "2fda5aa2-79a3-46ca-92a6-307d6c11d07c",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "a0f94e62-9d55-481c-8046-b02f1798bc78",
+			"id": "0693677a-93bf-446b-9373-660abccd7a0d",
 			"key": "assignmentId",
 			"value": ""
 		}
