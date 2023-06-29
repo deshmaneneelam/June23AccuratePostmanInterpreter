@@ -1,0 +1,595 @@
+{
+	"info": {
+		"_postman_id": "d471adb2-ab1d-4bc8-adff-c6197414ea6d",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "Get all assginment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7174ce7b-ad37-41a6-8dc0-343154ba3ac9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"console.log(jsonData.length);\r",
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "b4a29c17-ea3b-405f-9bbb-8f9708bf8c13",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/assignments"
+					},
+					"response": []
+				},
+				{
+					"name": "Get single assignment by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0269385b-179f-44f2-8ef6-03aeb2251d30",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const jsonData = pm.response.json();\r",
+									"console.log(jsonData.length);\r",
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									"pm.test(\"properties have valid data type\", function(){\r",
+									"    const res = pm.response.json();\r",
+									"   pm.expect(res[i].assignmentId).to.be.a('number');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "7d868b84-9ece-4902-9a33-25d213b14e3e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/assignments/:assignmentId/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"assignments",
+								":assignmentId",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "assignmentId",
+									"value": "1865",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET a single Batch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bcd3aa17-d8a4-4629-938c-77108ac66915",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "61fad786-8432-49db-9a2d-485e3aa9e592",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/assignments/batch/:batchId/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"assignments",
+								"batch",
+								":batchId",
+								""
+							],
+							"variable": [
+								{
+									"key": "batchId",
+									"value": "4340",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Assignment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81f8a594-5a92-4c1a-b56e-3cd16c38dfe0",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "83075fb7-2d9d-41ca-9eee-b69cc5ec4bf8",
+								"exec": [
+									"\r",
+									"const assignmentName = pm.variables.get(\"assignmentName\");\r",
+									"var snum = \"S\" + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"\r",
+									"pm.globals.set(\"assignmentName_env\", `${assignmentName}-${snum}`);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "f7e088db-a6bd-48a6-b538-65e27db5c52a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\"assignmentDescription\": \"{{assignmentDescription}}\",\r\n\"assignmentId\": \"{{assignmentId}}\" ,\r\n\"assignmentName\": \"{{assignmentName_env}}\",\r\n\"batchId\": \"{{batchId}}\",\r\n\"comments\": \"{{comments}}\",\r\n\"createdBy\": \"{{createdBy}}\",\r\n\"dueDate\": \"{{dueDate}}\",\r\n\"graderId\": \"{{graderId}}\",\r\n\"pathAttachment1\": \"{{pathAttachment1}}\",\r\n\"pathAttachment2\":\"{{pathAttachment2}}\",\r\n\"pathAttachment3\": \"{{pathAttachment3}}\",\r\n\"pathAttachment4\": \"{{pathAttachment4}}\",\r\n\"pathAttachment5\": \"{{pathAttachment5}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/assignments"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Assignment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "40b91c02-6496-420f-8c2d-23ac1a6549ae",
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"response must be valid and have a body\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "ec364abf-39b2-4538-b930-ab879eda34ba",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"assignmentId\":1865,\"assignmentName\":\"Jun23-LightningAPIHackers-SFDC--SQL-13740\",\"assignmentDescription\":\"SQL Practicing\",\"comments\":null,\"dueDate\":\"2023-06-19T22:02:28.140+00:00\",\"pathAttachment1\":\"Filepath1\",\"pathAttachment2\":\"Filepath2\",\"pathAttachment3\":\"Filepath3\",\"pathAttachment4\":\"Filepath4\",\"pathAttachment5\":\"Filepath5\",\"batchId\":4340,\"createdBy\":\"U22\",\"graderId\":\"U22\"}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/assignments/:assignmentId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"assignments",
+								":assignmentId"
+							],
+							"variable": [
+								{
+									"key": "assignmentId",
+									"value": "1865",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Assignment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "90abaca6-49f6-4518-9717-0a7d443d6592",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"response must be valid and have a body\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "fe95ff6b-2a43-465a-8f00-bcd5c0414c6d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseurl}}//assignments/{{assignmentId}}"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "ad5c7d9c-020f-449a-ba5c-ab5f71c80ac2"
+		},
+		{
+			"name": "Negative",
+			"item": [
+				{
+					"name": "Not getting assignments",
+					"_postman_id": "433ca429-fb45-4a08-991a-06028880f69d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/assignment"
+					},
+					"response": []
+				},
+				{
+					"name": "Getting assignment with Invalid id",
+					"_postman_id": "386bcdc5-b8e3-457b-9ecb-1d04a6a695e6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/assignments/:assignmentId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"assignments",
+								":assignmentId"
+							],
+							"variable": [
+								{
+									"key": "assignmentId",
+									"value": "567",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting batch with invalid Id",
+					"_postman_id": "dbcb8a94-e095-41f9-b253-64fb365f0e5e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/assignments/batch/:batchId/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"assignments",
+								"batch",
+								":batchId",
+								""
+							],
+							"variable": [
+								{
+									"key": "batchId",
+									"value": "22",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create incorrect assignment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "63ed7bc2-b6ed-4fea-a5bd-7ffdfbc401f1",
+								"exec": [
+									"pm.test(\"Response status code is 400 Bad Request\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "4c64bfa9-b46b-4054-b8c2-98b1a4ccfa9a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"assignmentDescription\": \"string\",\r\n  \"assignmentId\": ,\r\n  \"assignmentName\": \"string\",\r\n  \"batchId\": ,\r\n  \"comments\": \"string\",\r\n  \"createdBy\": \"string\",\r\n  \"dueDate\": \"2023-06-26T22:02:28.140Z\",\r\n  \"graderId\": \"string\",\r\n  \"pathAttachment1\": \"string\",\r\n  \"pathAttachment2\": \"string\",\r\n  \"pathAttachment3\": \"string\",\r\n  \"pathAttachment4\": \"string\",\r\n  \"pathAttachment5\": \"string\" }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/assignments"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Assignment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2744e23c-343f-4a1d-bb69-93b4a4178cd0",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "1c2a4334-8bb7-4503-a57c-948e09144805",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/assignments/:{{InvalidAssignmentId}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"assignments",
+								":{{InvalidAssignmentId}}"
+							],
+							"variable": [
+								{
+									"key": "{{InvalidAssignmentId}}",
+									"value": null,
+									"type": "any"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1e34a2a-af1c-42c5-ab6a-59e4c9b66043",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "eb4f3cfa-270b-47c0-8747-1806f72b6427",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/assignments/:{{InvalidAssignmentId}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"assignments",
+								":{{InvalidAssignmentId}}"
+							],
+							"variable": [
+								{
+									"key": "{{InvalidAssignmentId}}",
+									"value": "000",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "6488f663-98dd-4a21-8ff7-fc2b65c11da7"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e0f2ed42-be9f-452c-9cbd-21059aac3946",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8d872f90-5947-472e-a1c2-43e1af5ee879",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "8aa49824-4455-48fe-92ab-42c0e9432e83",
+			"key": "{{baseUrl}}",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
