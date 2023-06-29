@@ -488,7 +488,20 @@
 								"exec": [
 									"pm.test(\"Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
-									"});"
+									"});\r",
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -593,18 +606,18 @@
 	],
 	"variable": [
 		{
-			"id": "00bac6b9-fafe-4fc2-8a7d-f5f5907d0162",
+			"id": "a8376dc9-56e5-463d-a8ad-c53ee2dba1c5",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "31d9775c-b859-42a8-836a-9475b7298f12",
+			"id": "81c1c5be-7b82-49e1-8682-5a26fcd069b4",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "4b24073f-884e-412d-bebc-756d45befac7",
+			"id": "0caca176-94ac-4d6f-8642-710dbdca19ce",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
