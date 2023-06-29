@@ -944,29 +944,29 @@
 	],
 	"variable": [
 		{
-			"id": "251a157d-2588-4ec1-bba8-df792a45a65e",
+			"id": "1aada117-f12d-4e58-beef-c7d68a729947",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "2f7bced2-e924-4f42-bddf-64243b43bbbc",
+			"id": "d0750939-1088-4742-b9c3-0211d64cfe53",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "8336e7d0-5be2-4c98-85e4-bc5f4026fb71",
+			"id": "2b2f7e38-215e-4587-a322-c230ed3ef0e9",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "8d495dc2-8209-4e08-bd09-3715a2a2f106",
+			"id": "122062a0-59cd-44b8-8566-6d176e52cf20",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "0a4386a8-e5ed-4d8d-baf6-0744237ad254",
+			"id": "d79e8118-7399-408e-af78-fcfbaf247291",
 			"key": "assignmentId",
 			"value": ""
 		}
