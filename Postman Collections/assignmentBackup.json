@@ -194,7 +194,7 @@
 									"});\r",
 									"\r",
 									"\r",
-									"\r",
+									"pm.collectionVariables.set(\"assignmentIdModule\",jsonData.assignmentId);\r",
 									""
 								],
 								"type": "text/javascript"
@@ -355,7 +355,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseurl}}//assignments/{{assignmentId}}",
+						"url": "{{baseurl}}//assignments/{{assignmentIdModule}}",
 						"description": "StartFragment\n\nhttp DELETE request to delete an assignment using assignment ID.\n\nBaseURl : [https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms](https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms)\n\nEndpoint : /assignments/{assignmentID}\n\nStatus Code:\n\n200 Ok with message and boolean success details\n\nEndFragment"
 					},
 					"response": []
@@ -593,7 +593,7 @@
 	],
 	"variable": [
 		{
-			"id": "34a72811-3155-4bb5-9050-369e668ae608",
+			"id": "b7dfdd16-d89c-4b48-86e1-6699e159a98c",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
