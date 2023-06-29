@@ -383,6 +383,30 @@
 				},
 				{
 					"name": "Getting assignment with Invalid id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "99c7a3e9-bed2-42d0-9256-cebf1b827778",
+								"exec": [
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "386bcdc5-b8e3-457b-9ecb-1d04a6a695e6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -656,18 +680,18 @@
 	],
 	"variable": [
 		{
-			"id": "ae793dc6-bae3-4a65-8108-8f2f7331282b",
+			"id": "347f111e-23c3-4d2f-948a-17479af74db5",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "1d69acdb-9cdc-48d7-b365-a1d44550dd6a",
+			"id": "379ef69e-d72f-4475-8731-220ae36b116a",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "1d4b1e94-524a-4f31-8d6a-3da861cb91f2",
+			"id": "517e027c-2ff4-4e12-9f9c-eae6dbe61de9",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
