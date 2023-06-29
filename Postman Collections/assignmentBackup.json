@@ -412,6 +412,30 @@
 				},
 				{
 					"name": "Getting batch with invalid Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ff4b3cd9-4b8b-4043-bdf9-bea705e58f7b",
+								"exec": [
+									"\r",
+									"pm.test(\"Check if response is JSON\", function () {\r",
+									"    for(i=0;i<jsonData.length;i++){\r",
+									"        pm.expect(jsonData[i]).to.be.an('object');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check response header\", function () {\r",
+									"    pm.response.to.have.header('content-type');\r",
+									"    pm.response.to.be.header('content-type','application/json')\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "dbcb8a94-e095-41f9-b253-64fb365f0e5e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -632,18 +656,18 @@
 	],
 	"variable": [
 		{
-			"id": "917c81d0-0eba-4e6d-9ccc-4f97517159ef",
+			"id": "ae793dc6-bae3-4a65-8108-8f2f7331282b",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "2804e4cb-90ed-4f50-a073-a5004e738314",
+			"id": "1d69acdb-9cdc-48d7-b365-a1d44550dd6a",
 			"key": "assignmentIdModule",
 			"value": ""
 		},
 		{
-			"id": "0c50fa07-d627-4834-af2a-c0a63ae19c47",
+			"id": "1d4b1e94-524a-4f31-8d6a-3da861cb91f2",
 			"key": "{{invalidurl}}",
 			"value": "",
 			"type": "string"
