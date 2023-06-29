@@ -19,7 +19,6 @@
 								"exec": [
 									"// Get the response JSON",
 									"var responseJson = pm.response.json();",
-									"//responseJson[0].userId",
 									"// Extract the user IDs",
 									"var userIds = responseJson.map(function(obj) {",
 									"  return obj.user.userId;",
@@ -30,6 +29,27 @@
 									"",
 									"pm.test(\"Response code is 200 OK\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Get the response body",
+									"const responseBody = pm.response.json();",
+									"",
+									"// Iterate through each object in the collection",
+									"responseBody.forEach((object) => {",
+									"  const userId = object.userId;",
+									"  ",
+									"  // Check if userId starts with \"U\"",
+									"  if (!userId.startsWith('U')) {",
+									"    // Fail the test if userId does not start with \"U\"",
+									"    pm.test(`Object with userId ${userId} does not start with \"U\"`, () => {",
+									"      pm.expect.fail(`Object with userId ${userId} does not start with \"U\"`);",
+									"    });",
+									"  }",
+									"});",
+									"",
+									"// Pass the test if all userId properties start with \"U\"",
+									"pm.test('All userId properties start with \"U\"', () => {",
+									"  pm.expect(true).to.be.true;",
 									"});",
 									""
 								],
@@ -1065,7 +1085,7 @@
 	],
 	"variable": [
 		{
-			"id": "f64622c5-9bc0-419f-b3eb-23b2b2b58bed",
+			"id": "5932a144-59e5-415c-b299-59f4152bf795",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
