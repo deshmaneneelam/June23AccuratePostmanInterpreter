@@ -603,7 +603,8 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseurl}}/batch/{{programId}}"
+						"url": "{{baseurl}}/batch/{{programId}}",
+						"description": "StartFragment\n\nRequest to get a batch with a invalid program ID.\n\nStartFragment\n\nStatus Code :  \n404: Error with Message (Eg: \"message\": \"no record found with programName\", \"success\": false)\n\nEndFragment"
 					},
 					"response": []
 				},
