@@ -405,7 +405,8 @@
 									"value": "567"
 								}
 							]
-						}
+						},
+						"description": "StartFragment\n\nRequest to get an assignment details with a invalid user assignment ID.\n\nStatus Code : 404 not Found with message and boolean success details.\n\nEndFragment"
 					},
 					"response": []
 				},
@@ -588,7 +589,7 @@
 	],
 	"variable": [
 		{
-			"id": "02213f74-4ae7-4a95-80ed-a3f38f5ef145",
+			"id": "9f5d59f1-a5be-48f8-a854-0f9a805c096a",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
