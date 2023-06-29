@@ -577,7 +577,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e0f2ed42-be9f-452c-9cbd-21059aac3946",
+				"id": "f7f0564b-163f-42d3-aa10-3a37397332c7",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -587,7 +587,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8d872f90-5947-472e-a1c2-43e1af5ee879",
+				"id": "8147648b-18af-44eb-b51a-48f058b40d2b",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -597,15 +597,21 @@
 	],
 	"variable": [
 		{
-			"id": "a998a080-9003-47fa-bb10-7128ad1b1c95",
+			"id": "dd329fbf-2010-49d5-bc78-02226c03adaf",
 			"key": "{{baseUrl}}",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "fa3f1e59-12b7-41f0-957b-d51b07e66d89",
+			"id": "0b47810d-0c33-4823-bf7a-a26a46a69600",
 			"key": "assignmentIdModule",
 			"value": ""
+		},
+		{
+			"id": "8a491b7e-d6f1-4e74-8dfd-8590d428ba10",
+			"key": "{{invalidurl}}",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
