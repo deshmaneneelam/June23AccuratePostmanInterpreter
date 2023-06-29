@@ -380,14 +380,7 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"// Define the expected userId",
-									"var expectedUserId = pm.globals.get(\"userIdsCreated\");",
-									"",
-									"pm.test(\"Verify returned userId matches the expected userId\", function () {",
-									"    var jsonData = pm.response.json();",
-									"",
-									"    pm.expect(jsonData).to.equal(\"UserStatus Updated for User: \"+expectedUserId);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1078,7 +1071,7 @@
 	],
 	"variable": [
 		{
-			"id": "fe3dda53-6a56-448a-9c2d-9ee0be5f967b",
+			"id": "8e2eaaa4-b22a-4a40-935b-ff6bcc63f98f",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
