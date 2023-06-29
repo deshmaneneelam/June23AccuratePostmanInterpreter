@@ -924,7 +924,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b0a6521a-3a15-4ed2-9f57-3bdbc32bfde7",
+				"id": "7a9d5a66-a31e-4c4a-b304-726235e39689",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -934,7 +934,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "082090a1-0ec2-46a9-bfb2-4796d48f3fba",
+				"id": "fa2d72a8-fce3-4968-87a9-dfe4e59a130a",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -944,29 +944,29 @@
 	],
 	"variable": [
 		{
-			"id": "576a8b8d-6d46-45b9-b8e2-a07aba78937f",
+			"id": "827ce5c0-9bcd-407f-bca5-9f63974d2f90",
 			"key": "user_id",
 			"value": "U75"
 		},
 		{
-			"id": "3fda04be-522d-4a6d-92fc-d167f17aa566",
+			"id": "d52f80a3-189c-495a-aa91-50f90d667ed1",
 			"key": "submissionId",
 			"value": "586",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "9b5da7c4-30b2-4b41-abaf-1634eb7e1e8d",
+			"id": "6ce3aa93-e87c-4afe-91fe-1ad1f1eaeb11",
 			"key": "submissionId",
 			"value": ""
 		},
 		{
-			"id": "2fda5aa2-79a3-46ca-92a6-307d6c11d07c",
+			"id": "2228887d-1232-4615-bd5e-16de29d688f2",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "0693677a-93bf-446b-9373-660abccd7a0d",
+			"id": "2abc50a2-f43e-4eee-bc3c-fa3479f731e9",
 			"key": "assignmentId",
 			"value": ""
 		}
