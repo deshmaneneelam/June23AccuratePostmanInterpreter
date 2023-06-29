@@ -395,7 +395,7 @@
 									"pm.test(\"Verify returned userId matches the expected userId\", function () {",
 									"    var jsonData = pm.response.json();",
 									"",
-									"    pm.expect(\"UserStatus Updated for User: \"+expectedUserId).to.equal(\"UserStatus Updated for User: \"+expectedUserId);",
+									"    pm.expect(jsonData).to.equal(\"UserStatus Updated for User: \"+expectedUserId);",
 									"});"
 								],
 								"type": "text/javascript"
@@ -1065,7 +1065,7 @@
 	],
 	"variable": [
 		{
-			"id": "a964da57-e411-4439-98d7-a36d3ab588b9",
+			"id": "0b28f4c8-bd8d-4357-a702-e58e8ba4e4ad",
 			"key": "userBaseUrl",
 			"value": "https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms"
 		}
